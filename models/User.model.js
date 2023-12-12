@@ -1,5 +1,5 @@
-const mongoose = required("mongoose");
-const bcrypt = required("becryptjs");
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const SALT_WORK_FACTOR = 10;
 const EMAIL_PATTERN =

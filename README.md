@@ -6,7 +6,7 @@ Entidades
 -Usuarios
 Username
 Email
-Password
+Password => regex macth
 
 -Post de Recetas
 -Comentarios

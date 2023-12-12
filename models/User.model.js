@@ -32,6 +32,26 @@ const UserSchema = mongoose.Schema({
   },
   isActive: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 });
+
+UserSchema.pre("save", function (next) {
+  if (this.isModified("password")) {
+    bcrypt
+      .hash(this.password, SALT_WORK_FACTOR)
+      .then((hash) => {
+        this.password = hash;
+        next();
+      })
+      .catch((error) => next(error));
+  } else {
+    next();
+  }
+});
+UserSchema.methods.checkPassword = function (passwordToCheck) {
+  return bcrypt.compare(passwordToCheck, this.password);
+};
+
+const User = mongoose.model("User", UserSchema);
+module.exports = User;

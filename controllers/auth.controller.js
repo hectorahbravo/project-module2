@@ -25,8 +25,28 @@ module.exports.doRegister = (req, res, next) => {
         email,
         password,
       })
-        .then(() => {
-          res.redirect("/login");
+        .then((userCreated) => {
+          const {
+            transporter,
+            createEmailTemplate,
+          } = require("../config/nodemailer.config");
+
+          transporter.sendMail(
+            {
+              from: process.env.NODEMAILER_EMAIL,
+              to: email,
+              subject: "Ironbooks - Validation email",
+              html: createEmailTemplate(userCreated),
+            },
+            function (error, info) {
+              if (error) {
+                console.log(error);
+              } else {
+                console.log("Email sent: " + info.response);
+              }
+              res.redirect("/login");
+            }
+          );
         })
         .catch((error) => {
           if (error instanceof mongoose.Error.ValidationError) {
@@ -93,4 +113,17 @@ module.exports.logout = (req, res, next) => {
   req.session.destroy();
   res.clearCookie("connect.sid");
   res.redirect("/login");
+};
+
+module.exports.activate = (req, res, next) => {
+  const { token } = req.params;
+  User.findOneAndUpdate(
+    { activationToken: token },
+    { isActive: true },
+    { new: true }
+  )
+    .then((dbUser) => {
+      res.render("auth/login", { email: dbUser.email });
+    })
+    .catch((error) => next(error));
 };

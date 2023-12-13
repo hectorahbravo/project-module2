@@ -50,7 +50,7 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.doLogin = (req, res, next) => {
-  const { email, password } = req.body;
+  const { id, email, password } = req.body;
 
   const renderWithErrors = (msg) => {
     res.render("auth/login", {
@@ -78,6 +78,7 @@ module.exports.doLogin = (req, res, next) => {
                 if (!dbUser.isActive) {
                   renderWithErrors("User not active");
                 } else {
+                  req.session.currentUser = dbUser;
                   res.redirect("/profile");
                 }
               }
@@ -87,4 +88,9 @@ module.exports.doLogin = (req, res, next) => {
       })
       .catch((err) => next(err));
   }
+};
+module.exports.logout = (req, res, next) => {
+  req.session.destroy();
+  res.clearCookie("connect.sid");
+  res.redirect("/login");
 };

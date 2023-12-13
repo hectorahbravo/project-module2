@@ -11,8 +11,11 @@ router.get("/register", authController.register);
 router.post("/register", authController.doRegister);
 router.get("/login", authController.login);
 router.post("/login", authController.doLogin);
+router.get("/logout", authController.logout);
 
 //user
 router.get("/profile", userController.profile);
+router.get("/profile/edit", userController.edit);
+router.post("/profile/edit", userController.doEdit);
 
 module.exports = router;

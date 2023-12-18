@@ -1,0 +1,74 @@
+{
+  "recipes": [
+    {
+      "title": "Sopa de Tomate",
+      "ingredients": "Tomates, cebolla, ajo, caldo de verduras, albahaca, sal, pimienta",
+      "preparation": "Saltear la cebolla y el ajo, agregar los tomates y caldo. Cocinar hasta que hierva. Añadir albahaca, sal y pimienta al gusto.",
+      "preparationtime": "40 minutos",
+      "description": "Una sopa reconfortante de tomate con un toque de albahaca fresca."
+    },
+    {
+      "title": "Tacos de Pollo",
+      "ingredients": "Pechuga de pollo, tortillas de maíz, cebolla, cilantro, salsa, limón",
+      "preparation": "Cocinar el pollo y desmenuzarlo. Armar los tacos con pollo, cebolla, cilantro y salsa. Servir con limón.",
+      "preparationtime": "30 minutos",
+      "description": "Tacos jugosos de pollo con todos los sabores tradicionales mexicanos."
+    },
+    {
+      "title": "Ensalada de Quinoa",
+      "ingredients": "Quinoa, pepino, tomate cherry, aguacate, aderezo de limón",
+      "preparation": "Cocinar la quinoa y dejar enfriar. Mezclar con pepino, tomate cherry y aguacate. Aderezar con limón.",
+      "preparationtime": "25 minutos",
+      "description": "Una ensalada saludable y abundante con quinoa llena de nutrientes."
+    },
+    {
+      "title": "Pizza Margarita",
+      "ingredients": "Masa para pizza, tomates, mozzarella, albahaca, aceite de oliva",
+      "preparation": "Extender la masa, agregar tomates y mozzarella. Hornear hasta que la masa esté dorada. Decorar con albahaca y aceite de oliva.",
+      "preparationtime": "35 minutos",
+      "description": "La clásica pizza Margarita con sabores simples y auténticos."
+    },
+    {
+      "title": "Arroz con Pollo",
+      "ingredients": "Arroz, pechuga de pollo, cebolla, pimientos, azafrán, guisantes",
+      "preparation": "Dorar el pollo, saltear cebolla y pimientos, agregar arroz, azafrán y guisantes. Cocinar hasta que el arroz esté listo.",
+      "preparationtime": "45 minutos",
+      "description": "Un plato clásico de arroz con pollo con sabores irresistibles."
+    },
+    {
+      "title": "Pastel de Chocolate",
+      "ingredients": "Harina, azúcar, cacao, huevos, leche, vainilla, levadura",
+      "preparation": "Mezclar ingredientes secos, agregar huevos, leche y vainilla. Hornear hasta que un palillo salga limpio.",
+      "preparationtime": "50 minutos",
+      "description": "Un pastel de chocolate esponjoso y delicioso que satisfará tus antojos."
+    },
+    {
+      "title": "Ensalada César",
+      "ingredients": "Lechuga romana, pollo a la parrilla, crutones, queso parmesano, aderezo César",
+      "preparation": "Cortar la lechuga, agregar pollo a la parrilla, crutones y queso parmesano. Aderezar con aderezo César.",
+      "preparationtime": "20 minutos",
+      "description": "Una ensalada clásica César con crutones crujientes y pollo a la parrilla jugoso."
+    },
+    {
+      "title": "Risotto de Champiñones",
+      "ingredients": "Arroz arborio, champiñones, cebolla, vino blanco, caldo de verduras, queso parmesano",
+      "preparation": "Saltear champiñones y cebolla, agregar arroz y vino blanco. Cocinar con caldo hasta que esté cremoso. Agregar queso parmesano.",
+      "preparationtime": "40 minutos",
+      "description": "Un risotto cremoso y reconfortante con la bondad de los champiñones."
+    },
+    {
+      "title": "Batido de Proteínas",
+      "ingredients": "Plátano, espinacas, proteína en polvo, leche de almendras, almendras",
+      "preparation": "Mezclar plátano, espinacas, proteína en polvo y leche de almendras en una licuadora. Decorar con almendras.",
+      "preparationtime": "10 minutos",
+      "description": "Un batido energético y nutritivo para cargar tu día con proteínas saludables."
+    },
+    {
+      "title": "Hamburguesa Vegetariana",
+      "ingredients": "Garbanzos, zanahoria, cebolla, ajo, pan integral, aguacate",
+      "preparation": "Triturar garbanzos, mezclar con zanahoria, cebolla y ajo. Formar hamburguesas y cocinar. Servir en pan integral con aguacate.",
+      "preparationtime": "35 minutos",
+      "description": "Una deliciosa hamburguesa vegetariana llena de sabores y nutrientes."
+    }
+  ]
+}

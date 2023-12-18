@@ -1,0 +1,21 @@
+<div class="card my-5" style="width: 80%;">
+  <img
+    src="{{recipe.image}}"
+    class="card-img-top"
+    alt="..."
+    onerror="this.onerror=null;this.src='https://img.freepik.com/premium-vector/cooking-with-book-guide-recipe-concept-doodle-hand-drawn-vector-illustration_66976-327.jpg?w=740';"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{recipe.title}}</h5>
+    <p class="card-text">{{recipe.description}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{recipe.ingredients}}</li>
+    <li class="list-group-item">{{recipe.preparation}}</li>
+    <li class="list-group-item">{{recipe.preparationtime}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="btn btn-primary">Comentar</a>
+    <a href="#" class="btn btn-primary"> Me gusta </a>
+  </div>
+</div>

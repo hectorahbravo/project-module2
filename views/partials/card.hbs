@@ -1,0 +1,13 @@
+<div class="card m-2" style="width: 18rem;">
+  <img
+    src="{{this.image}}"
+    class="card-img-top mt-2"
+    alt="..."
+    onerror="this.onerror=null;this.src='https://img.freepik.com/premium-vector/cooking-with-book-guide-recipe-concept-doodle-hand-drawn-vector-illustration_66976-327.jpg?w=740';"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{this.title}}</h5>
+    <p class="card-text">{{this.description}}</p>
+    <a href="/recipes/{{this._id}}" class="btn btn-primary">See recipe</a>
+  </div>
+</div>

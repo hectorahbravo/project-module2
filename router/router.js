@@ -2,6 +2,7 @@ const router = require("express").Router();
 const authController = require("../controllers/auth.controller");
 const userController = require("../controllers/user.controller");
 const authMiddleware = require("../middlewares/auth.middlewares");
+const recipeController = require("../controllers/recipe.controller");
 
 router.get("/", (req, res, next) => {
   res.render("home");
@@ -39,5 +40,26 @@ router.post(
   authMiddleware.isAuthenticated,
   userController.doEdit
 );
+
 router.get("/activate/:token", authController.activate);
+
+//recipes
+router.get("/recipes", authMiddleware.isAuthenticated, recipeController.list);
+router.get(
+  "/recipes/create",
+  authMiddleware.isAuthenticated,
+  recipeController.create
+);
+router.post(
+  "/recipes/create",
+  authMiddleware.isAuthenticated,
+  recipeController.doCreate
+);
+
+router.get(
+  "/recipes/:id",
+  authMiddleware.isAuthenticated,
+  recipeController.details
+);
+
 module.exports = router;

@@ -17,6 +17,10 @@
         {{#if currentUser}}
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
+            <li class="nav-item">
+              <a class="nav-link" href="/recipes/create">Create a recipe</a>
+            </li>
+
           </li>{{else}}
           <li class="nav-item">
             <a
@@ -30,6 +34,9 @@
           </li>
 
         {{/if}}
+        <li class="nav-item">
+          <a class="nav-link" href="/recipes">Recipes</a>
+        </li>
       </ul>
       <form class="d-flex" role="search">
         <input

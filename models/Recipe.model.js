@@ -1,34 +1,48 @@
 const mongoose = require("mongoose");
 
-const RecipeSchema = mongoose.Schema({
-  title: {
-    type: String,
-    required: [true, "Title is required"],
-  },
+const RecipeSchema = mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: [true, "Title is required"],
+    },
 
-  ingredients: {
-    type: String,
-    required: [true, "Ingredients are required"],
-  },
+    ingredients: {
+      type: String,
+      required: [true, "Ingredients are required"],
+    },
 
-  preparation: {
-    type: String,
-    required: [true, "Preparation is required"],
-  },
+    preparation: {
+      type: String,
+      required: [true, "Preparation is required"],
+    },
 
-  image: {
-    type: String,
-    default: `https://img.freepik.com/premium-vector/cooking-with-book-guide-recipe-concept-doodle-hand-drawn-vector-illustration_66976-327.jpg?w=740`,
-  },
+    image: {
+      type: String,
+      default: `https://img.freepik.com/premium-vector/cooking-with-book-guide-recipe-concept-doodle-hand-drawn-vector-illustration_66976-327.jpg?w=740`,
+    },
 
-  preparationtime: {
-    type: String,
-    required: [true, "Preparation time is required"],
+    preparationtime: {
+      type: String,
+      required: [true, "Preparation time is required"],
+    },
+    description: {
+      type: String,
+      required: [true, "Descrption is required"],
+    },
+
+    user: { type: mongoose.Types.ObjectId, ref: "User" },
   },
-  description: {
-    type: String,
-    required: [true, "Descrption is required"],
-  },
+  {
+    virtual: true,
+  }
+);
+
+RecipeSchema.virtual("likes", {
+  ref: "Like",
+  justOne: false,
+  localField: "_id",
+  foreignField: "recipe",
 });
 
 const Recipe = mongoose.model("Recipe", RecipeSchema);

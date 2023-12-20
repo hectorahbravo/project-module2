@@ -1,10 +1,11 @@
 require("dotenv").config();
+require("./config/hbs.config");
 
 const express = require("express");
 const hbs = require("hbs");
 const logger = require("morgan");
 
-require("./config/db.config"); // es como si pusieramos todas las lineas del db.confgi aquí, pero somos mejores que eso.
+require("./config/db.config");
 
 const app = express();
 

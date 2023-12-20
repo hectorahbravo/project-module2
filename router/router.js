@@ -3,7 +3,7 @@ const authController = require("../controllers/auth.controller");
 const userController = require("../controllers/user.controller");
 const authMiddleware = require("../middlewares/auth.middlewares");
 const recipeController = require("../controllers/recipe.controller");
-
+const likeController = require("../controllers/like.controller");
 router.get("/", (req, res, next) => {
   res.render("home");
 });
@@ -60,6 +60,13 @@ router.get(
   "/recipes/:id",
   authMiddleware.isAuthenticated,
   recipeController.details
+);
+
+//like
+router.post(
+  "/like/:id",
+  authMiddleware.isAuthenticated,
+  likeController.newLike
 );
 
 module.exports = router;

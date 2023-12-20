@@ -34,6 +34,7 @@ const UserSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  like: { type: mongoose.Types.ObjectId, ref: "Like" },
 });
 
 UserSchema.pre("save", function (next) {

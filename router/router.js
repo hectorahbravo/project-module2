@@ -3,7 +3,9 @@ const authController = require("../controllers/auth.controller");
 const userController = require("../controllers/user.controller");
 const authMiddleware = require("../middlewares/auth.middlewares");
 const recipeController = require("../controllers/recipe.controller");
-const likeController = require("../controllers/like.controller");
+const commentsController = require("../controllers/comments.controller");
+
+
 router.get("/", (req, res, next) => {
   res.render("home");
 });
@@ -62,11 +64,9 @@ router.get(
   recipeController.details
 );
 
-//like
-router.post(
-  "/like/:id",
-  authMiddleware.isAuthenticated,
-  likeController.newLike
-);
+// comments
+
+router.get("/comments/:id/delete", authMiddleware.isAuthenticated, commentsController.delete);
+router.post("/comments/:id/create", authMiddleware.isAuthenticated, commentsController.doCreate);
 
 module.exports = router;

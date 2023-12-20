@@ -35,7 +35,7 @@ module.exports.doRegister = (req, res, next) => {
             {
               from: process.env.NODEMAILER_EMAIL,
               to: email,
-              subject: "Ironbooks - Validation email",
+              subject: "Gustopolis - Validation email",
               html: createEmailTemplate(userCreated),
             },
             function (error, info) {

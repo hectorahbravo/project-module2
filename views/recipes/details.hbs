@@ -1,5 +1,4 @@
-<div class="card my-5" style="width: 60%;">
-
+<div class="card my-5" style="width: 80%;">
   <img
     src="{{recipe.image}}"
     class="card-img-top"
@@ -15,13 +14,25 @@
     <li class="list-group-item">{{recipe.preparation}}</li>
     <li class="list-group-item">{{recipe.preparationtime}}</li>
   </ul>
-  <div class="card-body">
-    <a href="#" class="btn btn-primary">Comentar</a>
-    <form action="/like/{{recipe.id}}" method="POST">
-      <button type="submit" class="btn {{#userLikedRecipe
-        likes=recipe.likes userId=currentUser._id
-      }} btn-primary bg-light-green{{else}} btn-danger{{/userLikedRecipe}}">Me Gusta</button>
-      
+  <div class="col-12">
+    <h2>Comments</h2>
+    {{#each recipe.comments}}
+    <div class="card my-1">
+      <div class="card-body">
+        <p class="card-text">{{this.content}}</p>
+        <a href="/comments/{{this._id}}/delete" style="float: right; text-decoration: none;">🗑️<i data-feather="trash-2" width="16" style="color: red;"></i></a>
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+        <small class="text-body-secondary">by {{this.user.username}}</small>
+      </div>
+    </div>
+    {{/each}}
+    <form action="/comments/{{recipe._id}}/create" method="POST">
+      <div class="mb-3">
+        <label for="comment" class="form-label">Comment</label>
+        <textarea class="form-control" name="content" id="comment" rows="3" ></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Comment</button>
     </form>
-  </div>
+</div>
 </div>

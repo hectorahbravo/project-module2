@@ -4,7 +4,12 @@ const userController = require("../controllers/user.controller");
 const authMiddleware = require("../middlewares/auth.middlewares");
 const recipeController = require("../controllers/recipe.controller");
 const commentsController = require("../controllers/comments.controller");
+const passport = require('passport');
 
+const GOOGLE_SCOPES = [
+  'https://www.googleapis.com/auth/userinfo.email',
+  'https://www.googleapis.com/auth/userinfo.profile'
+]
 
 router.get("/", (req, res, next) => {
   res.render("home");
@@ -68,5 +73,9 @@ router.get(
 
 router.get("/comments/:id/delete", authMiddleware.isAuthenticated, commentsController.delete);
 router.post("/comments/:id/create", authMiddleware.isAuthenticated, commentsController.doCreate);
+
+// Google auth
+router.get('/auth/google', authMiddleware.isNotAuthenticated, passport.authenticate('google-auth', { scope: GOOGLE_SCOPES }));
+router.get('/auth/google/callback', authMiddleware.isNotAuthenticated, authController.doLoginGoogle)
 
 module.exports = router;

@@ -33,6 +33,13 @@ const RecipeSchema = mongoose.Schema({
   virtual: true,
 });
 
+RecipeSchema.virtual("likes", {
+  ref: "Like",
+  justOne: false,
+  localField: "_id",
+  foreignField: "recipe",
+});
+
 RecipeSchema.virtual("comments", {
   ref: "Comment",
   localField: "_id",

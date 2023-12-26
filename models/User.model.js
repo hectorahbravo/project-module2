@@ -41,6 +41,7 @@ const UserSchema = mongoose.Schema({
   googleID: {
     type: String,
   },
+  like: { type: mongoose.Types.ObjectId, ref: "Like" },
 });
 
 UserSchema.pre("save", function (next) {

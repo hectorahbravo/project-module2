@@ -34,5 +34,11 @@
       </div>
       <button type="submit" class="btn btn-success">Comment</button>
     </form>
+     <form action="/like/{{recipe.id}}" method="POST">
+      <button type="submit" class="btn {{#userLikedRecipe
+        likes=recipe.likes userId=currentUser._id
+      }} btn-primary bg-light-green{{else}} btn-danger{{/userLikedRecipe}}">Me Gusta</button>
+
+    </form>
 </div>
 </div>

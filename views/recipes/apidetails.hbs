@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    {{#each recipes}}
+      <div class="card" style="width: 80%;">
+        <img src="{{strMealThumb}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{strMeal}}</h5>
+          <p class="card-text">{{strInstructions}}</p>
+
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

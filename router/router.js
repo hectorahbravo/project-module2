@@ -4,13 +4,13 @@ const userController = require("../controllers/user.controller");
 const authMiddleware = require("../middlewares/auth.middlewares");
 const recipeController = require("../controllers/recipe.controller");
 const commentsController = require("../controllers/comments.controller");
-const passport = require('passport');
+const passport = require("passport");
 const likeController = require("../controllers/like.controller");
-
+const datosController = require("../controllers/datos.controller");
 const GOOGLE_SCOPES = [
-  'https://www.googleapis.com/auth/userinfo.email',
-  'https://www.googleapis.com/auth/userinfo.profile'
-]
+  "https://www.googleapis.com/auth/userinfo.email",
+  "https://www.googleapis.com/auth/userinfo.profile",
+];
 
 router.get("/", (req, res, next) => {
   res.render("home");
@@ -72,8 +72,16 @@ router.get(
 
 // comments
 
-router.get("/comments/:id/delete", authMiddleware.isAuthenticated, commentsController.delete);
-router.post("/comments/:id/create", authMiddleware.isAuthenticated, commentsController.doCreate);
+router.get(
+  "/comments/:id/delete",
+  authMiddleware.isAuthenticated,
+  commentsController.delete
+);
+router.post(
+  "/comments/:id/create",
+  authMiddleware.isAuthenticated,
+  commentsController.doCreate
+);
 
 //like
 router.post(
@@ -83,7 +91,19 @@ router.post(
 );
 
 // Google auth
-router.get('/auth/google', authMiddleware.isNotAuthenticated, passport.authenticate('google-auth', { scope: GOOGLE_SCOPES }));
-router.get('/auth/google/callback', authMiddleware.isNotAuthenticated, authController.doLoginGoogle)
+router.get(
+  "/auth/google",
+  authMiddleware.isNotAuthenticated,
+  passport.authenticate("google-auth", { scope: GOOGLE_SCOPES })
+);
+router.get(
+  "/auth/google/callback",
+  authMiddleware.isNotAuthenticated,
+  authController.doLoginGoogle
+);
 
+//data
+router.get("/categories", datosController.categories);
+router.get("/categories/:category", datosController.category);
+router.get("/recipesapi/:id", datosController.recipes);
 module.exports = router;

@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    {{#each categories}}
+      <div class="card" style="width: 18rem;">
+        <img src="{{this.strCategoryThumb}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{strCategory}}</h5>
+          <p class="card-text">{{strCategoryDescription}}</p>
+          <a href="/categories/{{strCategory}}" class="btn btn-primary">Go
+            somewhere</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

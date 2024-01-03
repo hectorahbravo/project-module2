@@ -4,6 +4,7 @@ const userController = require("../controllers/user.controller");
 const authMiddleware = require("../middlewares/auth.middlewares");
 const recipeController = require("../controllers/recipe.controller");
 const commentsController = require("../controllers/comments.controller");
+const homeController = require("../controllers/home.controller");
 const passport = require("passport");
 const likeController = require("../controllers/like.controller");
 const datosController = require("../controllers/datos.controller");
@@ -12,9 +13,7 @@ const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.profile",
 ];
 
-router.get("/", (req, res, next) => {
-  res.render("home");
-});
+router.get("/", homeController.goHome);
 
 //auth
 
@@ -52,7 +51,7 @@ router.post(
 router.get("/activate/:token", authController.activate);
 
 //recipes
-router.get("/recipes", authMiddleware.isAuthenticated, recipeController.list);
+router.get("/recipes", recipeController.list);
 router.get(
   "/recipes/create",
   authMiddleware.isAuthenticated,

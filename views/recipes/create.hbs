@@ -1,3 +1,4 @@
+
 <div id="signup" class="container col-xxl-4">
   <h1 class="text-center mt-5 mb-4">Create a recipe</h1>
 
@@ -10,19 +11,24 @@
       {{#if errors.title}}<div class="invalid-feedback">{{ errors.title }}</div>{{/if}}
     </div>
 
-   <div class="input-group mb-3">
-      <label class="w-100 mb-2" for="ingredients" style="color: #3498db;">Ingredients</label>
-      <textarea type="text" name="ingredients" rows ="5"
-        class="form-control  py-2 ps-4 {{#if errors.ingredients}}is-invalid{{/if}}"
-        placeholder="ingredients" aria-label="Recipe ingredients" value="{{ recipe.ingredients }}"></textarea>
+    <div id="ingredientsContainer" class="mb-3">
+      <label class="w-100 mb-2" style="color: #3498db;">Ingredients</label>
+      <div id="ingredientList">
+        <div class="ingredient-group">
+          <input type="text" name="ingredients[]" class="form-control py-2 ps-4 ingredient-input {{#if errors.ingredients}}is-invalid{{/if}}"
+            placeholder="Ingredient" aria-label="Recipe ingredients" value="{{ recipe.ingredients }}">
+          
+        </div>
+      </div>
+      <button type="button" onclick="addIngredient()" class="btn btn-secondary mt-2">Add Ingredient</button>
       {{#if errors.ingredients}}<div class="invalid-feedback">{{ errors.ingredients }}</div>{{/if}}
     </div>
 
     <div class="input-group mb-3">
       <label class="w-100 mb-2" for="preparation" style="color: #3498db;">Preparation</label>
-      <textarea type="text" name="preparation" rows ="5"
+      <textarea type="text" name="preparation" rows="5"
         class="form-control  py-2 ps-4 {{#if errors.preparation}}is-invalid{{/if}}"
-        placeholder="Preparation" aria-label="Recipe preparation" value="{{ recipe.preparation }}" ></textarea>
+        placeholder="Preparation" aria-label="Recipe preparation" value="{{ recipe.preparation }}"></textarea>
       {{#if errors.preparation}}<div class="invalid-feedback">{{ errors.preparation }}</div>{{/if}}
     </div>
 
@@ -50,9 +56,64 @@
       {{#if errors.description}}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
     </div>
 
-
     <div class="d-grid gap-2">
-      <button type="submit" class="btn btn-primary bg-light-green ">Create</button>
+      <button type="submit" class="btn btn-primary bg-light-green">Create</button>
     </div>
+
   </form>
+  
 </div>
+
+<style>
+  .ingredient-group {
+  position: relative;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+</style>
+
+<script>
+  function addIngredient() {
+  var ingredientList = document.getElementById("ingredientList");
+  var newIngredientGroup = document.createElement("div");
+  newIngredientGroup.classList.add("ingredient-group");
+
+  var newIngredientInput = document.createElement("input");
+  newIngredientInput.type = "text";
+  newIngredientInput.name = "ingredients[]";
+  newIngredientInput.placeholder = "50gr Sugar"
+  newIngredientInput.classList.add(
+    "form-control",
+    "py-2",
+    "ps-4",
+    "ingredient-input",
+    "mt-1"
+  );
+
+  var deleteIcon = document.createElement("a");
+  deleteIcon.href = "#";
+  deleteIcon.classList.add("delete-icon", "text-decoration-none");
+  deleteIcon.innerHTML = "🗑️";
+  deleteIcon.onclick = function (event) {
+    event.preventDefault();
+    deleteIngredient(newIngredientGroup);
+  };
+
+  newIngredientGroup.appendChild(newIngredientInput);
+  newIngredientGroup.appendChild(deleteIcon);
+  ingredientList.appendChild(newIngredientGroup);
+}
+
+function deleteIngredient(ingredientGroup) {
+  var ingredientList = document.getElementById("ingredientList");
+  ingredientList.removeChild(ingredientGroup);
+}
+
+</script>

@@ -2,13 +2,12 @@ const mongoose = require("mongoose");
 const User = require("../models/User.model");
 const passport = require("passport");
 
-
 module.exports.register = (req, res, next) => {
   res.render("auth/register");
 };
 
 module.exports.doRegister = (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, bio } = req.body;
 
   User.findOne({ email }).then((dbUser) => {
     if (dbUser) {
@@ -16,6 +15,7 @@ module.exports.doRegister = (req, res, next) => {
         user: {
           email,
           username,
+          bio,
         },
         errors: {
           email: "Email already registered!",
@@ -25,6 +25,7 @@ module.exports.doRegister = (req, res, next) => {
       User.create({
         username,
         email,
+        bio,
         password,
       })
         .then((userCreated) => {
@@ -56,6 +57,7 @@ module.exports.doRegister = (req, res, next) => {
               user: {
                 email,
                 username,
+                bio,
               },
               errors: error.errors,
             });
@@ -131,21 +133,23 @@ module.exports.activate = (req, res, next) => {
 };
 
 module.exports.doLoginGoogle = (req, res, next) => {
-  passport.authenticate('google-auth', (error, user, validations) => {
+  passport.authenticate("google-auth", (error, user, validations) => {
     if (error) {
       next(error);
     } else if (!user) {
-      res.status(400).render('auth/login', { user: req.body, error: validations });
+      res
+        .status(400)
+        .render("auth/login", { user: req.body, error: validations });
     } else {
-      req.login(user, loginErr => {
-        if (loginErr) next(loginErr)
+      req.login(user, (loginErr) => {
+        if (loginErr) next(loginErr);
         else {
           req.session.currentUser = user;
           // console.log(req.user);
           // console.log(req.session.passport.user);
-          res.redirect('/profile');
+          res.redirect("/profile");
         }
-      })
+      });
     }
-  })(req, res, next)
-}
+  })(req, res, next);
+};

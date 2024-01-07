@@ -105,4 +105,5 @@ router.get(
 router.get("/categories", datosController.categories);
 router.get("/categories/:category", datosController.category);
 router.get("/recipesapi/:id", datosController.recipes);
+
 module.exports = router;

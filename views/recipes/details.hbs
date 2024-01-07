@@ -37,7 +37,7 @@
      <form action="/like/{{recipe.id}}" method="POST">
       <button type="submit" class="btn {{#userLikedRecipe
         likes=recipe.likes userId=currentUser._id
-      }} btn-primary bg-light-green{{else}} btn-danger{{/userLikedRecipe}}">Me Gusta</button>
+      }}btn-danger{{else}} btn-primary bg-light-green {{/userLikedRecipe}}">Me Gusta</button>
 
     </form>
   </div>

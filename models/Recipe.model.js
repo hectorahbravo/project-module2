@@ -12,6 +12,11 @@ const RecipeSchema = mongoose.Schema(
       required: [true, "Ingredients are required"],
     },
 
+    mealType: {
+      type: "String",
+      required: [true, "Meal type is required"],
+    },
+
     preparation: {
       type: String,
       required: [true, "Preparation is required"],
@@ -26,10 +31,18 @@ const RecipeSchema = mongoose.Schema(
       type: String,
       required: [true, "Preparation time is required"],
     },
+
     description: {
       type: String,
       required: [true, "Descrption is required"],
     },
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+    },
+  },
+  {
+    timestamps: true,
   },
   {
     virtual: true,

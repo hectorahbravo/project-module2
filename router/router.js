@@ -106,3 +106,13 @@ router.get("/categories", datosController.categories);
 router.get("/categories/:category", datosController.category);
 router.get("/recipesapi/:id", datosController.recipes);
 module.exports = router;
+
+//edit
+
+router.get('/recipes/:id/edit', authMiddleware.isAuthenticated, recipeController.getRecipeEditForm);
+router.post('/recipes/:id', authMiddleware.isAuthenticated, recipeController.doRecipeEdit);
+
+//delete
+
+router.get('/recipes/:id/delete',authMiddleware.isAuthenticated, recipeController.deleteRecipe);
+

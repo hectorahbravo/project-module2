@@ -12,7 +12,7 @@ const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.email",
   "https://www.googleapis.com/auth/userinfo.profile",
 ];
-
+router.use(likeController.mostPopular);
 router.get("/", homeController.goHome);
 
 //auth

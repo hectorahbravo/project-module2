@@ -16,11 +16,16 @@ const UserSchema = mongoose.Schema({
     unique: true,
     match: [EMAIL_PATTERN, "Email is invalid"],
   },
+  bio: {
+    type: String,
+    maxLength: [140, "Bio must contain 140 characters or less"],
+  },
   password: {
     type: String,
     required: [true, "Password is required"],
     minLength: [8, "Password must be 8 characters or longer"],
   },
+
   activationToken: {
     type: String,
     default: () => {
@@ -36,12 +41,14 @@ const UserSchema = mongoose.Schema({
   },
   picture: {
     type: String,
-    default: "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
+    default:
+      "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
   },
   googleID: {
     type: String,
   },
   like: { type: mongoose.Types.ObjectId, ref: "Like" },
+  recipes: { type: [mongoose.Types.ObjectId], ref: "Recipe" },
 });
 
 UserSchema.pre("save", function (next) {

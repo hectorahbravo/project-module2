@@ -18,6 +18,12 @@
       {{#if errors.email}}<div class="invalid-feedback">{{ errors.email }}</div>{{/if}}
     </div>
 
+    <div class="input-group mb-2">
+      <label class="w-100 mb-2" for="bio" style="color: #3498db;">Bio</label>
+      <textarea type="text" name="bio" rows="5" class="form-control  py-2 ps-4"
+        placeholder="Description" aria-label="User bio" value="{{ recipe.bio }}" ></textarea>
+    </div>
+
     <div class="input-group mb-3">
       <label class="w-100 mb-2" for="password" style="color: #3498db;">Password</label>
       <input type="password" name="password"

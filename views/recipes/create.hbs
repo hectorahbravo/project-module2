@@ -49,6 +49,14 @@
     </div>
 
     <div class="input-group mb-3">
+      <label class="w-100 mb-2" for="mealType" style="color: #3498db;">Meal type</label>
+      <input type="text" name="mealType"
+        class="form-control  py-2 ps-4 {{#if errors.mealType}}is-invalid{{/if}}"
+        placeholder="Breakfast" aria-label="Recipe mealType" value="{{ recipe.mealType }}">
+      {{#if errors.mealType}}<div class="invalid-feedback">{{ errors.mealType }}</div>{{/if}}
+    </div>
+
+    <div class="input-group mb-3">
       <label class="w-100 mb-2" for="preparationtime" style="color: #3498db;">Preparation time</label>
       <input type="text" name="preparationtime"
         class="form-control  py-2 ps-4 {{#if errors.preparationtime}}is-invalid{{/if}}"

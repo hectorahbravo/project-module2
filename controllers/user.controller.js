@@ -1,8 +1,20 @@
 const User = require("../models/User.model");
+const Recipe = require("../models/Recipe.model");
 
 module.exports.profile = (req, res, next) => {
-  res.render("users/profile");
+  const userId = req.session.currentUser._id;
+
+  User.findById(userId)
+    .populate("recipes")
+    .then((userWithRecipes) => {
+      const userRecipes = userWithRecipes.recipes;
+      res.render("users/profile", { userRecipes });
+    })
+    .catch((error) => {
+      next(error);
+    });
 };
+
 module.exports.edit = (req, res, next) => {
   res.render("users/edit");
 };

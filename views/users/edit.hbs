@@ -10,6 +10,15 @@
       {{#if errors.username}}<div class="invalid-feedback">{{ errors.username }}</div>{{/if}}
     </div>
 
+     <div class="input-group mb-2">
+      <label class="w-100 mb-2"  for="bio" style="color: #3498db;">Bio</label>
+      <textarea type="text" name="bio"
+        class="form-control  py-2 ps-4 {{#if errors.bio}}is-invalid{{/if}}" rows="5"
+        placeholder="Bio" aria-label="User bio" value="{{ currentUser.bio }}" ></textarea>
+        <div class="invalid-feedback">{{ errors.bio }}</div>
+
+    </div>
+
     <div class="input-group mb-2">
       <label class="w-100 mb-2" for="email" style="color: #3498db;">Email</label>
       <input type="text" name="email"

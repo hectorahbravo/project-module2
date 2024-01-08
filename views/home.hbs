@@ -80,10 +80,10 @@
       <div class="container">
         <div class="row mb-4">
           <div class="col-sm-6">
-            <h2 class="posts-entry-title">Business</h2>
+            <h2 class="posts-entry-title">Recipe from our gustopolers</h2>
           </div>
           <div class="col-sm-6 text-sm-end"><a
-              href="category.html"
+              href="/recipes"
               class="read-more"
             >View All</a></div>
         </div>
@@ -94,18 +94,32 @@
                 <div class="blog-entry">
                   <a href="single.html" class="img-link">
                     <img
-                      src="images/img_1_sq.jpg"
+                      src="{{ourRecipeOne.image}}"
                       alt="Image"
                       class="img-fluid"
                     />
                   </a>
                   <span class="date">Apr. 14th, 2022</span>
-                  <h2><a href="single.html">Thought you loved Python? Wait until
-                      you meet Rust</a></h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Unde, nobis ea quis inventore vel voluptas.</p>
+                  <h2><a href="/recipes/{{ourRecipeOne._id}}">{{ourRecipeOne.title}}</a></h2>
+                  <p>{{ourRecipeOne.description}}.</p>
                   <p><a
-                      href="single.html"
+                      href="/recipes/{{ourRecipeOne._id}}"
+                      class="btn btn-sm btn-outline-primary"
+                    >Read More</a></p>
+                </div>
+                                <div class="blog-entry">
+                  <a href="single.html" class="img-link">
+                    <img
+                      src="{{ourRecipeTwo.image}}"
+                      alt="Image"
+                      class="img-fluid"
+                    />
+                  </a>
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h2><a href="/recipes/{{ourRecipeTwo._id}}">{{ourRecipeTwo.title}}</a></h2>
+                  <p>{{ourRecipeTwo.description}}.</p>
+                  <p><a
+                      href="/recipes/{{ourRecipeTwo._id}}"
                       class="btn btn-sm btn-outline-primary"
                     >Read More</a></p>
                 </div>
@@ -114,18 +128,16 @@
                 <div class="blog-entry">
                   <a href="single.html" class="img-link">
                     <img
-                      src="images/img_2_sq.jpg"
+                      src="{{ourRecipeThree.image}}"
                       alt="Image"
                       class="img-fluid"
                     />
                   </a>
                   <span class="date">Apr. 14th, 2022</span>
-                  <h2><a href="single.html">Startup vs corporate: What job suits
-                      you best?</a></h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Unde, nobis ea quis inventore vel voluptas.</p>
+                  <h2><a href="/recipes/{{ourRecipeThree._id}}">{{ourRecipeThree.title}}</a></h2>
+                  <p>{{ourRecipeThree.description}}.</p>
                   <p><a
-                      href="single.html"
+                      href="/recipes/{{ourRecipeThree._id}}"
                       class="btn btn-sm btn-outline-primary"
                     >Read More</a></p>
                 </div>
@@ -136,8 +148,7 @@
             <ul class="list-unstyled blog-entry-sm">
               <li>
                 <span class="date">Apr. 14th, 2022</span>
-                <h3><a href="single.html">Don’t assume your user data in the
-                    cloud is safe</a></h3>
+                <h3><a href="single.html">{{ourUserOne.username}}</a></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Unde, nobis ea quis inventore vel voluptas.</p>
                 <p><a href="#" class="read-more">Continue Reading</a></p>
@@ -145,7 +156,7 @@
 
               <li>
                 <span class="date">Apr. 14th, 2022</span>
-                <h3><a href="single.html">Meta unveils fees on metaverse sales</a></h3>
+                <h3><a href="single.html">{{ourUserTwo.username}}</a></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Unde, nobis ea quis inventore vel voluptas.</p>
                 <p><a href="#" class="read-more">Continue Reading</a></p>
@@ -153,7 +164,7 @@
 
               <li>
                 <span class="date">Apr. 14th, 2022</span>
-                <h3><a href="single.html">UK sees highest inflation in 30 years</a></h3>
+                <h3><a href="single.html">{{ourUserThree.username}}</a></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Unde, nobis ea quis inventore vel voluptas.</p>
                 <p><a href="#" class="read-more">Continue Reading</a></p>

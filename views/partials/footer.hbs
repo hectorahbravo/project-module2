@@ -4,8 +4,11 @@
       <div class="col-lg-4">
         <div class="widget">
           <h3 class="mb-4">About</h3>
-          <p>Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts.</p>
+          <p>Welcome to Gustopolis, where the love for recipes thrives! Join our
+            vibrant community of food enthusiasts, where trust and a diverse
+            array of flavors are our specialties. Discover, share, and savor a
+            unique culinary world with us. We look forward to exploring a
+            universe of delicious possibilities together at Gustopolis!.</p>
         </div>
         <!-- /.widget -->
         <div class="widget">
@@ -47,54 +50,26 @@
       <!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <div class="widget">
-          <h3 class="mb-4">Recent Post Entry</h3>
+          <h3 class="mb-4">Most popular</h3>
           <div class="post-entry-footer">
             <ul>
-              <li>
-                <a href="">
-                  <img
-                    src="images/img_1_sq.jpg"
-                    alt="Image placeholder"
-                    class="me-4 rounded"
-                  />
-                  <div class="text">
-                    <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                    <div class="post-meta">
-                      <span class="mr-2">March 15, 2018 </span>
+              {{#each popularRecipes}}
+                <li>
+                  <a href="">
+                    <img
+                      src={{this.image}}
+                      alt="Image placeholder"
+                      class="me-4 rounded"
+                    />
+                    <div class="text">
+                      <h4>{{this.title}}</h4>
+                      <div class="post-meta">
+                        <span class="mr-2">{{this.mealType}} </span>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="images/img_2_sq.jpg"
-                    alt="Image placeholder"
-                    class="me-4 rounded"
-                  />
-                  <div class="text">
-                    <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                    <div class="post-meta">
-                      <span class="mr-2">March 15, 2018 </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="images/img_3_sq.jpg"
-                    alt="Image placeholder"
-                    class="me-4 rounded"
-                  />
-                  <div class="text">
-                    <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                    <div class="post-meta">
-                      <span class="mr-2">March 15, 2018 </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
+                  </a>
+                </li>
+              {{/each}}
             </ul>
           </div>
 

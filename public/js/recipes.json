@@ -1,74 +1,329 @@
 {
   "recipes": [
     {
-      "title": "Sopa de Tomate",
-      "ingredients": "Tomates, cebolla, ajo, caldo de verduras, albahaca, sal, pimienta",
-      "preparation": "Saltear la cebolla y el ajo, agregar los tomates y caldo. Cocinar hasta que hierva. Añadir albahaca, sal y pimienta al gusto.",
-      "preparationtime": "40 minutos",
-      "description": "Una sopa reconfortante de tomate con un toque de albahaca fresca."
+      "title": "Tomato Soup",
+      "mealType": "Lunch",
+      "ingredients": [
+        "500g Tomatoes",
+        "100g Onion",
+        "2 cloves Garlic",
+        "1L Vegetable broth",
+        "15g Fresh basil",
+        "Salt to taste",
+        "Pepper to taste"
+      ],
+      "preparation": "Sauté onion and garlic, add tomatoes and broth. Cook until boiling. Add basil, salt, and pepper to taste.",
+      "preparationtime": "40 minutes",
+      "description": "A comforting tomato soup with a touch of fresh basil.",
+      "image": "https://t2.uc.ltmcdn.com/es/posts/3/0/9/como_hacer_sopa_de_tomate_casera_25903_600.webp"
     },
     {
-      "title": "Tacos de Pollo",
-      "ingredients": "Pechuga de pollo, tortillas de maíz, cebolla, cilantro, salsa, limón",
-      "preparation": "Cocinar el pollo y desmenuzarlo. Armar los tacos con pollo, cebolla, cilantro y salsa. Servir con limón.",
-      "preparationtime": "30 minutos",
-      "description": "Tacos jugosos de pollo con todos los sabores tradicionales mexicanos."
+      "title": "Chicken Tacos",
+      "mealType": "Dinner",
+      "ingredients": [
+        "300g Chicken breast",
+        "6 Corn tortillas",
+        "50g Onion",
+        "20g Cilantro",
+        "100g Salsa",
+        "Lime wedges"
+      ],
+      "preparation": "Cook chicken and shred it. Assemble tacos with chicken, onion, cilantro, and salsa. Serve with lime.",
+      "preparationtime": "30 minutes",
+      "description": "Juicy chicken tacos with all the traditional Mexican flavors.",
+      "image": "https://s23209.pcdn.co/wp-content/uploads/2019/08/Easy-Chicken-TacosIMG_9892.jpg"
     },
     {
-      "title": "Ensalada de Quinoa",
-      "ingredients": "Quinoa, pepino, tomate cherry, aguacate, aderezo de limón",
-      "preparation": "Cocinar la quinoa y dejar enfriar. Mezclar con pepino, tomate cherry y aguacate. Aderezar con limón.",
-      "preparationtime": "25 minutos",
-      "description": "Una ensalada saludable y abundante con quinoa llena de nutrientes."
+      "title": "Quinoa Salad",
+      "mealType": "Lunch",
+      "ingredients": [
+        "200g Quinoa",
+        "1 Cucumber",
+        "150g Cherry tomatoes",
+        "1 Avocado",
+        "Lemon dressing"
+      ],
+      "preparation": "Cook quinoa and let it cool. Mix with cucumber, cherry tomatoes, and avocado. Dress with lemon.",
+      "preparationtime": "25 minutes",
+      "description": "A healthy and hearty quinoa salad full of nutrients.",
+      "image": "https://cdn.loveandlemons.com/wp-content/uploads/2020/08/quinoa-salad-recipes-779x1024.jpg"
     },
     {
-      "title": "Pizza Margarita",
-      "ingredients": "Masa para pizza, tomates, mozzarella, albahaca, aceite de oliva",
-      "preparation": "Extender la masa, agregar tomates y mozzarella. Hornear hasta que la masa esté dorada. Decorar con albahaca y aceite de oliva.",
-      "preparationtime": "35 minutos",
-      "description": "La clásica pizza Margarita con sabores simples y auténticos."
+      "title": "Margherita Pizza",
+      "mealType": "Dinner",
+      "ingredients": [
+        "Pizza dough",
+        "400g Tomatoes",
+        "300g Mozzarella",
+        "Fresh basil leaves",
+        "Olive oil"
+      ],
+      "preparation": "Roll out the dough, add tomatoes and mozzarella. Bake until the crust is golden. Garnish with basil and olive oil.",
+      "preparationtime": "35 minutes",
+      "description": "The classic Margherita pizza with simple and authentic flavors.",
+      "image": "https://imag.bonviveur.com/pizza-margarita_800.webp"
     },
     {
-      "title": "Arroz con Pollo",
-      "ingredients": "Arroz, pechuga de pollo, cebolla, pimientos, azafrán, guisantes",
-      "preparation": "Dorar el pollo, saltear cebolla y pimientos, agregar arroz, azafrán y guisantes. Cocinar hasta que el arroz esté listo.",
-      "preparationtime": "45 minutos",
-      "description": "Un plato clásico de arroz con pollo con sabores irresistibles."
+      "title": "Chicken and Rice",
+      "mealType": "Dinner",
+      "ingredients": [
+        "300g Rice",
+        "300g Chicken breast",
+        "100g Onion",
+        "100g Bell peppers",
+        "Saffron",
+        "100g Peas"
+      ],
+      "preparation": "Brown the chicken, sauté onion and bell peppers, add rice, saffron, and peas. Cook until the rice is done.",
+      "preparationtime": "45 minutes",
+      "description": "A classic chicken and rice dish with irresistible flavors.",
+      "image": "https://www.budgetbytes.com/wp-content/uploads/2022/05/Chicken-and-Rice-V1-768x1024.jpg"
     },
     {
-      "title": "Pastel de Chocolate",
-      "ingredients": "Harina, azúcar, cacao, huevos, leche, vainilla, levadura",
-      "preparation": "Mezclar ingredientes secos, agregar huevos, leche y vainilla. Hornear hasta que un palillo salga limpio.",
-      "preparationtime": "50 minutos",
-      "description": "Un pastel de chocolate esponjoso y delicioso que satisfará tus antojos."
+      "title": "Chocolate Cake",
+      "mealType": "Dessert",
+      "ingredients": [
+        "250g Flour",
+        "200g Sugar",
+        "50g Cocoa",
+        "3 Eggs",
+        "200ml Milk",
+        "10ml Vanilla extract",
+        "15g Baking powder"
+      ],
+      "preparation": "Mix dry ingredients, add eggs, milk, and vanilla. Bake until a toothpick comes out clean.",
+      "preparationtime": "50 minutes",
+      "description": "A fluffy and delicious chocolate cake that will satisfy your cravings.",
+      "image": "https://cafedelites.com/wp-content/uploads/2020/02/Chocolate-Cake-IMAGE-69-768x1152.jpg"
     },
     {
-      "title": "Ensalada César",
-      "ingredients": "Lechuga romana, pollo a la parrilla, crutones, queso parmesano, aderezo César",
-      "preparation": "Cortar la lechuga, agregar pollo a la parrilla, crutones y queso parmesano. Aderezar con aderezo César.",
-      "preparationtime": "20 minutos",
-      "description": "Una ensalada clásica César con crutones crujientes y pollo a la parrilla jugoso."
+      "title": "Caesar Salad",
+      "mealType": "Lunch",
+      "ingredients": [
+        "Romaine lettuce",
+        "200g Grilled chicken",
+        "Croutons",
+        "50g Parmesan cheese",
+        "Caesar dressing"
+      ],
+      "preparation": "Chop lettuce, add grilled chicken, croutons, and parmesan cheese. Toss with Caesar dressing.",
+      "preparationtime": "20 minutes",
+      "description": "A classic Caesar salad with crispy croutons and juicy grilled chicken.",
+      "image": "https://canalcocina.es/medias/_cache/zoom-baacfb36b1770e20150d927cb9da2ed2-920-518.jpg"
     },
     {
-      "title": "Risotto de Champiñones",
-      "ingredients": "Arroz arborio, champiñones, cebolla, vino blanco, caldo de verduras, queso parmesano",
-      "preparation": "Saltear champiñones y cebolla, agregar arroz y vino blanco. Cocinar con caldo hasta que esté cremoso. Agregar queso parmesano.",
-      "preparationtime": "40 minutos",
-      "description": "Un risotto cremoso y reconfortante con la bondad de los champiñones."
+      "title": "Mushroom Risotto",
+      "mealType": "Dinner",
+      "ingredients": [
+        "300g Arborio rice",
+        "200g Mushrooms",
+        "100g Onion",
+        "150ml White wine",
+        "1L Vegetable broth",
+        "100g Parmesan cheese"
+      ],
+      "preparation": "Sauté mushrooms and onion, add rice and white wine. Cook with broth until creamy. Add parmesan cheese.",
+      "preparationtime": "40 minutes",
+      "description": "A creamy and comforting risotto with the goodness of mushrooms.",
+      "image": "https://i.blogs.es/b64bf1/risotto-de-setas/650_1200.jpg"
     },
     {
-      "title": "Batido de Proteínas",
-      "ingredients": "Plátano, espinacas, proteína en polvo, leche de almendras, almendras",
-      "preparation": "Mezclar plátano, espinacas, proteína en polvo y leche de almendras en una licuadora. Decorar con almendras.",
-      "preparationtime": "10 minutos",
-      "description": "Un batido energético y nutritivo para cargar tu día con proteínas saludables."
+      "title": "Protein Smoothie",
+      "mealType": "Breakfast",
+      "ingredients": [
+        "1 Banana",
+        "Handful of Spinach",
+        "30g Protein powder",
+        "200ml Almond milk",
+        "Almonds for garnish"
+      ],
+      "preparation": "Blend banana, spinach, protein powder, and almond milk in a blender. Garnish with almonds.",
+      "preparationtime": "10 minutes",
+      "description": "An energizing and nutritious smoothie to fuel your day with healthy proteins.",
+      "image": "https://joyfoodsunshine.com/wp-content/uploads/2022/08/protein-smoothie-recipe-7-768x768.jpg"
     },
     {
-      "title": "Hamburguesa Vegetariana",
-      "ingredients": "Garbanzos, zanahoria, cebolla, ajo, pan integral, aguacate",
-      "preparation": "Triturar garbanzos, mezclar con zanahoria, cebolla y ajo. Formar hamburguesas y cocinar. Servir en pan integral con aguacate.",
-      "preparationtime": "35 minutos",
-      "description": "Una deliciosa hamburguesa vegetariana llena de sabores y nutrientes."
+      "title": "Vegetarian Burger",
+      "mealType": "Dinner",
+      "ingredients": [
+        "400g Cooked chickpeas",
+        "1 Carrot",
+        "100g Onion",
+        "2 cloves Garlic",
+        "Whole grain buns",
+        "1 Avocado"
+      ],
+      "preparation": "Mash chickpeas, mix with carrot, onion, and garlic. Form patties and cook. Serve on whole grain buns with avocado.",
+      "preparationtime": "35 minutes",
+      "description": "A delicious vegetarian burger packed with flavors and nutrients.",
+      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/halloumi-burger-4fdad97.jpg?quality=90&webp=true&resize=500,454"
+    },
+
+    {
+      "title": "Pancakes",
+      "mealType": "Breakfast",
+      "ingredients": [
+        "200g Flour",
+        "15g Sugar",
+        "5g Baking powder",
+        "1 Egg",
+        "250ml Milk",
+        "30g Butter (melted)",
+        "Pinch of Salt"
+      ],
+      "preparation": "Mix dry ingredients, add egg, milk, and melted butter. Cook on a hot griddle until golden brown.",
+      "preparationtime": "20 minutes",
+      "description": "Fluffy pancakes perfect for a delightful breakfast.",
+      "image": "https://blog.elamasadero.com/wp-content/uploads/receta_pancakes-768x768.jpg"
+    },
+    {
+      "title": "Spaghetti Carbonara",
+      "mealType": "Dinner",
+      "ingredients": [
+        "400g Spaghetti",
+        "150g Pancetta or bacon",
+        "2 Eggs",
+        "50g Parmesan cheese",
+        "Black pepper",
+        "Salt"
+      ],
+      "preparation": "Cook spaghetti. Sauté pancetta, mix with eggs, cheese, and seasonings. Toss with cooked spaghetti.",
+      "preparationtime": "25 minutes",
+      "description": "A classic Italian pasta dish loaded with flavor.",
+      "image": "https://i.blogs.es/6c5598/espaguetis_carbonara-min/650_1200.jpg"
+    },
+    {
+      "title": "Greek Salad",
+      "mealType": "Lunch",
+      "ingredients": [
+        "Romaine lettuce",
+        "Cucumbers",
+        "Red onion",
+        "Kalamata olives",
+        "Feta cheese",
+        "Tomatoes",
+        "Olive oil",
+        "Red wine vinegar",
+        "Oregano",
+        "Salt",
+        "Pepper"
+      ],
+      "preparation": "Chop vegetables, add olives, feta cheese, and dress with olive oil, vinegar, oregano, salt, and pepper.",
+      "preparationtime": "15 minutes",
+      "description": "A refreshing salad with Mediterranean flavors.",
+      "image": "https://cdn.loveandlemons.com/wp-content/uploads/2019/07/greek-salad-2-786x1024.jpg"
+    },
+    {
+      "title": "Omelette",
+      "mealType": "Breakfast",
+      "ingredients": [
+        "3 Eggs",
+        "30g Milk",
+        "30g Cheddar cheese (grated)",
+        "15g Butter",
+        "Salt",
+        "Pepper"
+      ],
+      "preparation": "Whisk eggs, milk, cheese, salt, and pepper. Cook in a pan with melted butter until set.",
+      "preparationtime": "10 minutes",
+      "description": "A quick and delicious way to start your morning.",
+      "image": "https://t2.uc.ltmcdn.com/es/posts/8/2/7/como_hacer_un_omelette_de_huevo_31728_600.webp"
+    },
+    {
+      "title": "Stir-Fried Vegetables",
+      "mealType": "Dinner",
+      "ingredients": [
+        "Broccoli florets",
+        "Carrots (sliced)",
+        "Bell peppers (sliced)",
+        "Snow peas",
+        "Soy sauce",
+        "Garlic (minced)",
+        "Ginger (minced)",
+        "Sesame oil"
+      ],
+      "preparation": "Stir-fry vegetables with garlic, ginger, and soy sauce in a hot pan with sesame oil.",
+      "preparationtime": "15 minutes",
+      "description": "A colorful and healthy mix of stir-fried veggies.",
+      "image": "https://natashaskitchen.com/wp-content/uploads/2020/08/Vegetable-Stir-Fry-2.jpg"
+    },
+    {
+      "title": "Fruit Salad",
+      "mealType": "Dessert",
+      "ingredients": [
+        "Strawberries",
+        "Blueberries",
+        "Kiwi (sliced)",
+        "Banana (sliced)",
+        "Orange segments",
+        "Honey or lime juice (optional)"
+      ],
+      "preparation": "Mix fruits in a bowl. Add a drizzle of honey or lime juice if desired.",
+      "preparationtime": "10 minutes",
+      "description": "A refreshing and sweet treat made with fresh fruits.",
+      "image": "https://www.cookingclassy.com/wp-content/uploads/2019/05/fruit-salad-4-768x1152.jpg"
+    },
+    {
+      "title": "Grilled Cheese Sandwich",
+      "mealType": "Lunch",
+      "ingredients": ["Sliced bread", "Cheddar cheese (sliced)", "Butter"],
+      "preparation": "Assemble sandwich with cheese between bread slices. Grill in a buttered pan until golden brown.",
+      "preparationtime": "10 minutes",
+      "description": "A classic and comforting cheesy delight.",
+      "image": "https://www.recipetineats.com/wp-content/uploads/2023/07/Grilled-Cheese-sandwich-photo-main.jpg"
+    },
+    {
+      "title": "Beef Stir-Fry",
+      "mealType": "Dinner",
+      "ingredients": [
+        "400g Beef strips",
+        "Bell peppers (sliced)",
+        "Onion (sliced)",
+        "Soy sauce",
+        "Cornstarch",
+        "Garlic (minced)",
+        "Ginger (minced)",
+        "Vegetable oil"
+      ],
+      "preparation": "Coat beef with cornstarch, stir-fry with vegetables, garlic, and ginger. Add soy sauce while cooking.",
+      "preparationtime": "20 minutes",
+      "description": "A savory and satisfying beef stir-fry.",
+      "image": "https://www.allrecipes.com/thmb/xcOdImFBdut09lTsPnOxIjnv-2E=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/228823-quick-beef-stir-fry-DDMFS-4x3-1f79b031d3134f02ac27d79e967dfef5.jpg"
+    },
+    {
+      "title": "Banana Bread",
+      "mealType": "Dessert",
+      "ingredients": [
+        "3 Ripe bananas",
+        "150g Flour",
+        "100g Sugar",
+        "1 Egg",
+        "60g Butter",
+        "5g Baking soda",
+        "5g Baking powder",
+        "Vanilla extract"
+      ],
+      "preparation": "Mash bananas, mix with other ingredients. Bake until a toothpick comes out clean.",
+      "preparationtime": "50 minutes",
+      "description": "A moist and flavorful homemade banana bread.",
+      "image": "https://cdn.recetasderechupete.com/wp-content/uploads/2019/05/Pan-de-pl%C3%A1tano-768x530.jpg"
+    },
+    {
+      "title": "Avocado Toast",
+      "mealType": "Breakfast",
+      "ingredients": [
+        "Sliced bread",
+        "Ripe avocados",
+        "Lemon juice",
+        "Cherry tomatoes (halved)",
+        "Red pepper flakes (optional)",
+        "Salt",
+        "Pepper"
+      ],
+      "preparation": "Mash avocados with lemon juice, spread on toast. Top with tomatoes, red pepper flakes, salt, and pepper.",
+      "preparationtime": "10 minutes",
+      "description": "A simple yet delicious breakfast option.",
+      "image": "https://i.blogs.es/f2e1bf/tasty-appetizing-crispbread-with-mashed-avocado-served-on-plate/650_1200.jpg"
     }
   ]
 }

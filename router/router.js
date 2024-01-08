@@ -12,7 +12,7 @@ const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.email",
   "https://www.googleapis.com/auth/userinfo.profile",
 ];
-
+router.use(likeController.mostPopular);
 router.get("/", homeController.goHome);
 
 //auth
@@ -105,6 +105,7 @@ router.get(
 router.get("/categories", datosController.categories);
 router.get("/categories/:category", datosController.category);
 router.get("/recipesapi/:id", datosController.recipes);
+
 module.exports = router;
 
 //edit

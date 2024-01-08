@@ -1,8 +1,18 @@
 
 <div id="signup" class="container col-xxl-4">
-  <h1 class="text-center mt-5 mb-4">Create a recipe</h1>
+  <h1>
+    {{#if isEdit}}
+      Edita este producto
+    {{else}}
+      Crea un nuevo smartphone
+    {{/if}}
+  </h1>
 
-  <form class="container-sm mx-auto" style="max-width: 400px;" action="/recipes/create" method="POST">
+  {{#if isEdit}}
+    <form action="/recipes/{{recipe._id}}" method="POST">
+  {{else}}
+    <form action="/recipes" method="POST">
+  {{/if}}
     <div class="input-group mb-2">
       <label class="w-100 mb-2" for="title" style="color: #3498db;">Title</label>
       <input type="text" name="title"
@@ -34,9 +44,7 @@
 
     <div class="input-group mb-3">
       <label class="w-100 mb-2" for="image" style="color: #3498db;">Image</label>
-        <input type="text" name="image"
-        class="form-control  py-2 ps-4 {{#if errors.image}}is-invalid{{/if}}"
-        placeholder="Image" aria-label="Recipe image" >
+        <input placeholder="Upload an image" type="file" name="image" class="{{#if errors}}is-invalid{{/if}} form-control" id="image">
       {{#if errors.image}}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
     </div>
 
@@ -64,9 +72,13 @@
       {{#if errors.description}}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
     </div>
 
-    <div class="d-grid gap-2">
-      <button type="submit" class="btn btn-primary bg-light-green">Create</button>
-    </div>
+    <button type="submit" class="btn btn-primary">
+      {{#if isEdit}}
+        Actualizar receta
+      {{else}}
+        Crear producto
+      {{/if}}
+    </button>
 
   </form>
   

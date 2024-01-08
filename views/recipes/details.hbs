@@ -37,8 +37,10 @@
      <form action="/like/{{recipe.id}}" method="POST">
       <button type="submit" class="btn {{#userLikedRecipe
         likes=recipe.likes userId=currentUser._id
-      }}btn-danger{{else}} btn-primary bg-light-green {{/userLikedRecipe}}">Me Gusta</button>
 
+      }} btn-primary bg-light-green{{else}} btn-danger{{/userLikedRecipe}}">Me Gusta</button>
+      <a class="btn btn-primary" href="/recipes/{{recipe._id}}/edit">Edit this recipe</a>
+      <a class="btn btn-primary" href="/recipes/{{recipe._id}}/delete">Delete</a>
     </form>
   </div>
 </div>

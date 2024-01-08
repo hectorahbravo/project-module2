@@ -24,7 +24,7 @@ const RecipeSchema = mongoose.Schema(
 
     image: {
       type: String,
-      default: `https://img.freepik.com/premium-vector/cooking-with-book-guide-recipe-concept-doodle-hand-drawn-vector-illustration_66976-327.jpg?w=740`,
+      default: "https://collection.cloudinary.com/dsapgrujx/d1990eb46425b47174321c841cf0f9dd.jpg",
     },
 
     preparationtime: {

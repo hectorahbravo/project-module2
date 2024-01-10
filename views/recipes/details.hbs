@@ -1,19 +1,55 @@
-<div class="card my-5" style="width: 80%;">
-  <img
-    src="{{recipe.image}}"
-    class="card-img-top"
-    alt="..."
-    onerror="this.onerror=null;this.src='https://img.freepik.com/premium-vector/cooking-with-book-guide-recipe-concept-doodle-hand-drawn-vector-illustration_66976-327.jpg?w=740';"
-  />
-  <div class="card-body">
-    <h5 class="card-title">{{recipe.title}}</h5>
-    <p class="card-text">{{recipe.description}}</p>
+<body>
+  <div class=" d-flex justify-content-center">
+    <div class="card m-5 col col-lg-9 col-xl-7">
+    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url({{recipe.image}});">
+    <div class="container">
+      <div class="row same-height justify-content-center">
+        <div class="col-md-6">
+          <div class="post-entry text-center">
+            <h1 class="mb-4">{{recipe.title}}</h1>
+            <div class="post-meta align-items-center text-center">
+              {{#if recipe.user}}<figure class="author-figure mb-0 me-3 d-inline-block"><img src={{recipe.user.picture}} alt="Image" class="img-fluid"></figure>{{/if}}
+              <span class="d-inline-block mt-1">{{#if recipe.user}}By {{recipe.user.username}}{{/if}}</span>
+              <span>{{recipe.mealType}}</span>
+              <span>&nbsp;-&nbsp; {{recipe.date}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{recipe.ingredients}}</li>
-    <li class="list-group-item">{{recipe.preparation}}</li>
-    <li class="list-group-item">{{recipe.preparationtime}}</li>
-  </ul>
+       <div class="d-flex justify-content-center align-items-center mt-3"> 
+        {{#userMatchRecipeUser recipeUserId=recipe.user._id userId=currentUser._id }} 
+        <a class="btn btn-primary" href="/recipes/{{recipe._id}}/edit"><i class="fa-regular fa-pen-to-square"></i></a>
+         {{/userMatchRecipeUser}}
+          
+          <form action="/like/{{recipe.id}}" method="POST">
+          <button type="submit" class="btn  {{#userLikedRecipe likes=recipe.likes userId=currentUser._id}} btn-danger {{else}} btn-primary bg-light-green{{/userLikedRecipe}} mt-3 mx-2"><i class="fa-regular fa-heart"></i></button>
+          </form>
+          {{#userMatchRecipeUser recipeUserId=recipe.user._id userId=currentUser._id }} 
+          <a class="btn btn-primary" href="/recipes/{{recipe._id}}/delete"><i class="fa-solid fa-delete-left"></i></a>
+         {{/userMatchRecipeUser}}
+        </div>
+
+    <section class="section">
+    <div class="container">
+
+      <div class="row blog-entries element-animate">
+
+        <div class="col-md-12 col-lg-8 main-content">
+
+          <div class="post-content-body">
+            <ul>
+            {{#each recipe.ingredients}}
+              <li>{{this}}</li>
+            {{/each}}
+            </ul>
+
+            <p>{{recipe.preparation}}</p>
+            <p>{{recipe.preparationtime}}</p>
+          </div>
+
+  </div>
   <div class="col-12">
     <h2>Comments</h2>
     {{#each recipe.comments}}
@@ -27,20 +63,25 @@
       </div>
     </div>
     {{/each}}
-    <form action="/comments/{{recipe._id}}/create" method="POST">
-      <div class="mb-3">
-        <label for="comment" class="form-label">Comment</label>
-        <textarea class="form-control" name="content" id="comment" rows="3" ></textarea>
-      </div>
-      <button type="submit" class="btn btn-success">Comment</button>
-    </form>
-     <form action="/like/{{recipe.id}}" method="POST">
-      <button type="submit" class="btn {{#userLikedRecipe
-        likes=recipe.likes userId=currentUser._id
+    </div>
+   
 
-      }} btn-primary bg-light-green{{else}} btn-danger{{/userLikedRecipe}}">Me Gusta</button>
-      <a class="btn btn-primary" href="/recipes/{{recipe._id}}/edit">Edit this recipe</a>
-      <a class="btn btn-primary" href="/recipes/{{recipe._id}}/delete">Delete</a>
+
+     <form action="/comments/{{recipe._id}}/create" method="POST">
+        <div class="comment-form-wrap pt-5 ">
+          <h3 class="mb-5">Leave a comment</h3>
+
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea name="content" id="comment" rows="3" class="form-control"></textarea>
+                </div>
+                  <button type="submit" class="btn btn-primary"><i class="fa-regular fa-comment"></i></button>   
     </form>
-  </div>
+
 </div>
+</div>
+    </section>
+  </div>
+  
+  </div>
+</body>

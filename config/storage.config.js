@@ -1,7 +1,7 @@
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
-const CloudinaryStorage = require("multer-storage-cloudinary")
-  .CloudinaryStorage;
+const CloudinaryStorage =
+  require("multer-storage-cloudinary").CloudinaryStorage;
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
@@ -12,8 +12,8 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "ironhack/test",
-    allowedFormats: ["jpg", "png"],
+    folder: "gustopolis",
+    allowedFormats: ["jpg", "png", "jpeg"],
   },
 });
 

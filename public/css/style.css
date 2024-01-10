@@ -13641,7 +13641,9 @@ textarea {
 }
 .site-cover,
 .site-cover .same-height {
-  padding: 3em 0;
+  padding: 6em 0;
+  background-size: cover;
+  background-position: center center;
 }
 .site-cover.single-page h1,
 .site-cover.single-page .h1 {

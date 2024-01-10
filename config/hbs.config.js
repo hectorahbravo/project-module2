@@ -8,3 +8,10 @@ hbs.registerHelper("userLikedRecipe", function (options) {
     return options.inverse(this);
   }
 });
+
+hbs.registerHelper("userMatchRecipeUser", function (options) {
+  const { userId, recipeUserId } = options.hash;
+  if (recipeUserId && userId && recipeUserId.toString() === userId.toString()) {
+    return options.fn(this);
+  }
+});

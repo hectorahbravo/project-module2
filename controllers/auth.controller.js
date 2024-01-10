@@ -145,8 +145,7 @@ module.exports.doLoginGoogle = (req, res, next) => {
         if (loginErr) next(loginErr);
         else {
           req.session.currentUser = user;
-          // console.log(req.user);
-          // console.log(req.session.passport.user);
+
           res.redirect("/profile");
         }
       });

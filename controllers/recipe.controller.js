@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 module.exports.list = (req, res, next) => {
   Recipe.find()
     .then((recipes) => {
-      console.log(recipes);
       res.render("recipes/list", { recipes });
     })
     .catch((err) => next(err));
@@ -15,14 +14,12 @@ module.exports.create = (req, res, next) => {
 };
 
 module.exports.doCreate = (req, res, next) => {
-  const {
-    title,
-    ingredients,
-    preparation,
-    image,
-    preparationtime,
-    description,
-  } = req.body;
+  const { title, ingredients, preparation, preparationtime, description } =
+    req.body;
+
+  if (req.file) {
+    req.body.image = req.file.path;
+  }
   req.body.user = req.session.currentUser._id;
 
   Recipe.create(req.body)
@@ -40,6 +37,7 @@ module.exports.doCreate = (req, res, next) => {
           recipes: {
             title,
             ingredients,
+            maelType,
             preparation,
             image,
             preparationtime,
@@ -55,6 +53,7 @@ module.exports.doCreate = (req, res, next) => {
 
 module.exports.details = (req, res, next) => {
   Recipe.findById(req.params.id)
+    .populate("user")
     .populate("likes")
     .populate({
       path: "comments",
@@ -63,51 +62,69 @@ module.exports.details = (req, res, next) => {
       },
     })
     .then((recipe) => {
+      const year = recipe.createdAt.getFullYear();
+      const month = recipe.createdAt.getMonth();
+      const day = recipe.createdAt.getDate();
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      recipe.date = `${months[month]} ${day}, ${year}`;
       res.render("recipes/details", { recipe });
     })
     .catch((err) => next(err));
 };
 
 module.exports.getRecipeEditForm = (req, res, next) => {
-  Promise.all([
-    Recipe.findById(req.params.id), // La receta de la vista
-  ])
-    .then((response) => {
-      const [recipe] = response;
-      if (recipe) {
-        res.render('recipes/create', { recipe, isEdit: true })
-      } else {
-        next(createError(404, 'No hemos encontrado esta receta'))
-      }
-    })
-}
+  Promise.all([Recipe.findById(req.params.id)]).then((response) => {
+    const [recipe] = response;
+    if (recipe) {
+      res.render("recipes/create", { recipe, isEdit: true });
+    } else {
+      next(createError(404, "No hemos encontrado esta receta"));
+    }
+  });
+};
 
 module.exports.doRecipeEdit = (req, res, next) => {
   Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true }) // Primer parametro id - segundo objeto de updates - tercero el new true si quereis el objeto actualizado
-    .then(recipeDB => {
+    .then((recipeDB) => {
       res.redirect(`/recipes/${recipeDB._id}`);
     })
-    .catch(err => {
+    .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         // Renderizar la vista de nuevo, pero con los errores
-        return Manufacturer.find()
-          .then(manufacturers => {
-            res.render('recipes/create', { errors: err.errors, recipes: req.body, isEdit: true })
-          })
+        return Recipe.find().then((recipes) => {
+          res.render("recipes/create", {
+            errors: err.errors,
+            recipes: req.body,
+            isEdit: true,
+          });
+        });
       } else {
-        next(err)
+        next(err);
       }
-    })
-}
+    });
+};
 
 module.exports.deleteRecipe = (req, res, next) => {
   Recipe.findByIdAndDelete(req.params.id)
-    .then(recipeDB => {
+    .then((recipeDB) => {
       if (recipeDB) {
-        res.redirect('/recipes');
+        res.redirect("/recipes");
       } else {
-        next(createError(404))
+        next(createError(404));
       }
     })
-    .catch(err => next(err))
-}
+    .catch((err) => next(err));
+};

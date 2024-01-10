@@ -2,16 +2,16 @@
 <div id="signup" class="container col-xxl-4">
   <h1>
     {{#if isEdit}}
-      Edita este producto
+      Edit recipe
     {{else}}
-      Crea un nuevo smartphone
+      Create recipe
     {{/if}}
   </h1>
 
   {{#if isEdit}}
-    <form action="/recipes/{{recipe._id}}" method="POST">
+    <form action="/recipes/{{recipe._id}}" method="POST" enctype="multipart/form-data">
   {{else}}
-    <form action="/recipes" method="POST">
+    <form action="/recipes/create" method="POST" enctype="multipart/form-data">
   {{/if}}
     <div class="input-group mb-2">
       <label class="w-100 mb-2" for="title" style="color: #3498db;">Title</label>
@@ -74,9 +74,9 @@
 
     <button type="submit" class="btn btn-primary">
       {{#if isEdit}}
-        Actualizar receta
+        Update recipe
       {{else}}
-        Crear producto
+        Create
       {{/if}}
     </button>
 

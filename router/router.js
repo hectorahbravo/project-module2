@@ -8,6 +8,7 @@ const homeController = require("../controllers/home.controller");
 const passport = require("passport");
 const likeController = require("../controllers/like.controller");
 const datosController = require("../controllers/datos.controller");
+const upload = require("../config/storage.config");
 const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.email",
   "https://www.googleapis.com/auth/userinfo.profile",
@@ -60,12 +61,13 @@ router.get(
 router.post(
   "/recipes/create",
   authMiddleware.isAuthenticated,
+  upload.single("image"),
   recipeController.doCreate
 );
 
 router.get(
   "/recipes/:id",
-  authMiddleware.isAuthenticated,
+  //authMiddleware.isAuthenticated,
   recipeController.details
 );
 
@@ -79,6 +81,7 @@ router.get(
 router.post(
   "/comments/:id/create",
   authMiddleware.isAuthenticated,
+  upload.single("image"),
   commentsController.doCreate
 );
 
@@ -106,14 +109,25 @@ router.get("/categories", datosController.categories);
 router.get("/categories/:category", datosController.category);
 router.get("/recipesapi/:id", datosController.recipes);
 
-module.exports = router;
-
 //edit
 
-router.get('/recipes/:id/edit', authMiddleware.isAuthenticated, recipeController.getRecipeEditForm);
-router.post('/recipes/:id', authMiddleware.isAuthenticated, recipeController.doRecipeEdit);
+router.get(
+  "/recipes/:id/edit",
+  authMiddleware.isAuthenticated,
+  recipeController.getRecipeEditForm
+);
+router.post(
+  "/recipes/:id",
+  authMiddleware.isAuthenticated,
+  recipeController.doRecipeEdit
+);
 
 //delete
 
-router.get('/recipes/:id/delete',authMiddleware.isAuthenticated, recipeController.deleteRecipe);
+router.get(
+  "/recipes/:id/delete",
+  authMiddleware.isAuthenticated,
+  recipeController.deleteRecipe
+);
 
+module.exports = router;

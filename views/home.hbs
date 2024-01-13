@@ -92,8 +92,8 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="blog-entry">
-                  <a href="single.html" class="img-link">
-                    <img
+                  <a href="/recipes/{{ourRecipeOne._id}}" class="img-link">
+                    <img 
                       src="{{ourRecipeOne.image}}"
                       alt="Image"
                       class="img-fluid"
@@ -108,7 +108,7 @@
                     >Read More</a></p>
                 </div>
                                 <div class="blog-entry">
-                  <a href="single.html" class="img-link">
+                  <a href="/recipes/{{ourRecipeTwo._id}}" class="img-link">
                     <img
                       src="{{ourRecipeTwo.image}}"
                       alt="Image"
@@ -126,7 +126,7 @@
               </div>
               <div class="col-md-6">
                 <div class="blog-entry">
-                  <a href="single.html" class="img-link">
+                  <a href="/recipes/{{ourRecipeThree._id}}" class="img-link">
                     <img
                       src="{{ourRecipeThree.image}}"
                       alt="Image"
@@ -141,10 +141,27 @@
                       class="btn btn-sm btn-outline-primary"
                     >Read More</a></p>
                 </div>
+
+                
+                  <a href="/recipes/{{ourRecipeFour._id}}" class="img-link">
+                    <img
+                      src="{{ourRecipeFour.image}}"
+                      alt="Image"
+                      class="img-fluid"
+                    />
+                  </a>
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h2><a href="/recipes/{{ourRecipeFour._id}}">{{ourRecipeFour.title}}</a></h2>
+                  <p>{{ourRecipeFour.description}}.</p>
+                  <p><a
+                      href="/recipes/{{ourRecipeFour._id}}"
+                      class="btn btn-sm btn-outline-primary"
+                    >Read More</a></p>
+
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+           <div class="col-md-3">
             <ul class="list-unstyled blog-entry-sm">
               <li>
                 <span class="date">Apr. 14th, 2022</span>
@@ -172,6 +189,12 @@
             </ul>
           </div>
         </div>
+                
+              </div>
+            </div>
+          </div>
+         
+
       </div>
     </section>
     <!-- End posts-entry -->

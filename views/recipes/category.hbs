@@ -1,11 +1,13 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     {{#each recipes}}
-      <div class="card" style="width: 18rem;">
+      <div  class="card" style="width: 18rem;">
+        <a href="/recipesapi/{{idMeal}}">
         <img src="{{strMealThumb}}" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{strMeal}}</h5>
           <a href="/recipesapi/{{idMeal}}" class="btn btn-primary">Go somewhere</a>
+          </a>
         </div>
       </div>
     {{/each}}

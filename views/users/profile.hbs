@@ -56,17 +56,18 @@
             </div>
             <div class="d-flex justify-content-between align-items-center mb-4">
               <p class="lead fw-normal mb-0">User recipes</p>
-              <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
             </div>
             <div class="row g-2">
 
                 {{#each userRecipes}}
                   <div class="col mb-2">
+                      <a href="/recipes/{{this._id}}">
                       <img
                         src={{this.image}}
                         alt="image 1"
                         class="w-100 rounded-3"
                       />
+                      </a>
                   </div>
                 {{/each}}
 

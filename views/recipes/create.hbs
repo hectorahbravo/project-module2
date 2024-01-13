@@ -38,7 +38,7 @@
       <label class="w-100 mb-2" for="preparation" style="color: #3498db;">Preparation</label>
       <textarea type="text" name="preparation" rows="5"
         class="form-control  py-2 ps-4 {{#if errors.preparation}}is-invalid{{/if}}"
-        placeholder="Preparation" aria-label="Recipe preparation" value="{{ recipe.preparation }}"></textarea>
+        placeholder="Preparation" aria-label="Recipe preparation">{{ recipe.preparation }}</textarea>
       {{#if errors.preparation}}<div class="invalid-feedback">{{ errors.preparation }}</div>{{/if}}
     </div>
 
@@ -48,27 +48,39 @@
       {{#if errors.image}}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
     </div>
 
+   <div class="row">
+  <div class="col-md-4">
     <div class="input-group mb-3">
       <label class="w-100 mb-2" for="mealType" style="color: #3498db;">Meal type</label>
-      <input type="text" name="mealType"
-        class="form-control  py-2 ps-4 {{#if errors.mealType}}is-invalid{{/if}}"
-        placeholder="Breakfast" aria-label="Recipe mealType" value="{{ recipe.mealType }}">
-      {{#if errors.mealType}}<div class="invalid-feedback">{{ errors.mealType }}</div>{{/if}}
     </div>
+    
+    <select id="inputState" class="form-select form-control">
+      <option>Breakfast</option>
+      <option>Lunch</option>
+      <option>Dinner</option>
+      <option>Dessert</option>
+    </select>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-md-4">
     <div class="input-group mb-3">
       <label class="w-100 mb-2" for="preparationtime" style="color: #3498db;">Preparation time</label>
       <input type="text" name="preparationtime"
-        class="form-control  py-2 ps-4 {{#if errors.preparationtime}}is-invalid{{/if}}"
+        class="form-control py-2 ps-4 {{#if errors.preparationtime}}is-invalid{{/if}}"
         placeholder="1h 20m" aria-label="Recipe preparationtime" value="{{ recipe.preparationtime }}">
       {{#if errors.preparationtime}}<div class="invalid-feedback">{{ errors.preparationtime }}</div>{{/if}}
     </div>
+  </div>
+</div>
+
 
     <div class="input-group mb-2">
       <label class="w-100 mb-2" for="description" style="color: #3498db;">Description</label>
       <textarea type="text" name="description"
         class="form-control  py-2 ps-4 {{#if errors.description}}is-invalid{{/if}}"
-        placeholder="Description" aria-label="User description" value="{{ recipe.description }}" ></textarea>
+        placeholder="Description" aria-label="User description">{{ recipe.preparation }}</textarea>
       {{#if errors.description}}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
     </div>
 

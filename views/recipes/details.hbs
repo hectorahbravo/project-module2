@@ -52,14 +52,16 @@
   </div>
   <div class="col-12">
     <h2>Comments</h2>
-    {{#each recipe.comments}}
+    {{#each recipe.comments as |comment|}}
     <div class="card my-1">
       <div class="card-body">
-        <p class="card-text">{{this.content}}</p>
-        <a href="/comments/{{this._id}}/delete" style="float: right; text-decoration: none;">🗑️<i data-feather="trash-2" width="16" style="color: red;"></i></a>
+        <p class="card-text">{{comment.content}}</p>
+        {{#userMatchRecipeUser recipeUserId=comment.user._id userId=../currentUser._id }} 
+        <a href="/comments/{{comment._id}}/delete" style="float: right; text-decoration: none;">🗑️<i data-feather="trash-2" width="16" style="color: red;"></i></a>
+        {{/userMatchRecipeUser}}
       </div>
       <div class="card-footer d-flex justify-content-between">
-        <small class="text-body-secondary">by {{this.user.username}}</small>
+        <small class="text-body-secondary">by {{comment.user.username}}</small>
       </div>
     </div>
     {{/each}}

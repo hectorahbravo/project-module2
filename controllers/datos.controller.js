@@ -33,8 +33,26 @@ exports.recipes = (req, res, next) => {
       return response.json();
     })
     .then((data) => {
-      console.log("Parsed response: ", data);
-      res.render("recipes/apidetails", { recipes: data.meals });
+      const ingredientsArray = [];
+
+      for (let i = 1; i <= 20; i++) {
+        const ingredient = data.meals[0][`strIngredient${i}`];
+        const measure = data.meals[`strMeasure${i}`];
+
+        if (ingredient) {
+          const combinedIngredient = measure
+            ? `${measure} ${ingredient}`
+            : `${ingredient}`;
+          ingredientsArray.push(combinedIngredient);
+        }
+      }
+
+      console.log("data.meals: ", data.meals[0]);
+
+      res.render("recipes/apidetails", {
+        ...data.meals[0],
+        ingredients: ingredientsArray,
+      });
     })
     .catch((err) => console.log(err));
 };

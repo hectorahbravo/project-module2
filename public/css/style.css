@@ -13888,3 +13888,10 @@ textarea {
   background: #fff;
   color: #214252;
 }
+.img-fluidcategories {
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

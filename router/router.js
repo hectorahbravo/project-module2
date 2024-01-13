@@ -5,6 +5,7 @@ const authMiddleware = require("../middlewares/auth.middlewares");
 const recipeController = require("../controllers/recipe.controller");
 const commentsController = require("../controllers/comments.controller");
 const homeController = require("../controllers/home.controller");
+const navbarCategories = require("../controllers/home.controller");
 const passport = require("passport");
 const likeController = require("../controllers/like.controller");
 const datosController = require("../controllers/datos.controller");

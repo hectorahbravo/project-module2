@@ -13888,6 +13888,7 @@ textarea {
   background: #fff;
   color: #214252;
 }
+
 #botonArriba {
   position: fixed;
   bottom: 20px;
@@ -13895,3 +13896,11 @@ textarea {
   width: 40px;
   transition: all 1s;
 }
+.img-fluidcategories {
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+

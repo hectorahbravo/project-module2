@@ -25,9 +25,7 @@ module.exports.doEdit = (req, res, next) => {
     .then((dbUser) => {
       req.session.currentUser = dbUser;
       res.redirect("/profile");
-      console.log(dbUser);
     })
 
     .catch((error) => next(error));
 };
-

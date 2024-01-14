@@ -29,3 +29,13 @@ module.exports.doEdit = (req, res, next) => {
 
     .catch((error) => next(error));
 };
+module.exports.viewOtherProfile = (req, res, next) => {
+  const { id } = req.params;
+  User.findById(id)
+    .populate("recipes")
+    .then((user) => {
+      res.render("users/otherprofile", { user });
+    })
+
+    .catch((error) => next(error));
+};

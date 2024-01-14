@@ -1,4 +1,6 @@
 const fetch = require("node-fetch");
+const Like = require("../models/Like.model");
+const Comment = require("../models/Comment.model");
 
 exports.categories = (req, res, next) => {
   fetch("https:/www.themealdb.com/api/json/v1/1/categories.php")
@@ -37,7 +39,7 @@ exports.recipes = (req, res, next) => {
 
       for (let i = 1; i <= 20; i++) {
         const ingredient = data.meals[0][`strIngredient${i}`];
-        const measure = data.meals[`strMeasure${i}`];
+        const measure = data.meals[0][`strMeasure${i}`];
 
         if (ingredient) {
           const combinedIngredient = measure
@@ -47,12 +49,32 @@ exports.recipes = (req, res, next) => {
         }
       }
 
-      console.log("data.meals: ", data.meals[0]);
+      console.log("data.meals: ", data.meals[0], ingredientsArray);
+      const commentPromise = Comment.find({
+        recipeApi: data.meals[0].idMeal,
+      }).populate("user");
+      const likePromise = Like.findOne({ recipeApi: data.meals[0].idMeal });
 
-      res.render("recipes/apidetails", {
-        ...data.meals[0],
-        ingredients: ingredientsArray,
-      });
+      Promise.all([commentPromise, likePromise])
+        .then(([comments, likeEncontrado]) => {
+          const renderData = {
+            ...data.meals[0],
+            ingredients: ingredientsArray,
+          };
+
+          if (comments) {
+            renderData.comments = comments;
+            console.log(comments);
+          }
+
+          if (likeEncontrado) {
+            renderData.like = likeEncontrado;
+            console.log(likeEncontrado);
+          }
+
+          res.render("recipes/apidetails", renderData);
+        })
+        .catch((err) => console.log(err));
     })
     .catch((err) => console.log(err));
 };

@@ -37,7 +37,7 @@ module.exports.doCreate = (req, res, next) => {
           recipes: {
             title,
             ingredients,
-            maelType,
+            mealType,
             preparation,
             image,
             preparationtime,

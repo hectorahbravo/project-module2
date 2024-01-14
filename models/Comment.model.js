@@ -13,7 +13,9 @@ const CommentSchema = mongoose.Schema({
   recipe: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Recipe",
-    required: true,
+  },
+  recipeApi: {
+    type: String,
   },
 });
 

@@ -10,30 +10,24 @@
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
               <img
                 class="profile-image"
-                src={{currentUser.picture}}
+                src={{user.picture}}
                 alt="Profile Image"
               />
-              <a
-                href="/profile/edit"
-                class="btn btn-outline-dark"
-                data-mdb-ripple-color="dark"
-                style="z-index: 1;"
-              >
-                Edit profile
-              </a>
+
             </div>
             <div class="ms-3" style="margin-top: 130px;">
-              <h5>{{currentUser.username}}</h5>
+              <h5>{{user.username}}</h5>
               <p>New York</p>
             </div>
           </div>
           <div class="p-4 text-black" style="background-color: #f8f9fa;">
             <div class="d-flex justify-content-end text-center py-1">
               <div>
-                <p class="mb-1 h5">{{currentUser.recipes.length}}</p>
+                <p class="mb-1 h5">{{user.recipes.length}}</p>
                 <p class="small text-muted mb-0">Recipes</p>
               </div>
-              <div class="px-3">
+<!--
+                  <div class="px-3">
                 <p class="mb-1 h5">1026</p>
                 <p class="small text-muted mb-0">Followers</p>
               </div>
@@ -41,14 +35,15 @@
                 <p class="mb-1 h5">478</p>
                 <p class="small text-muted mb-0">Following</p>
               </div>
+-->
             </div>
           </div>
           <div class="card-body p-4 text-black">
             <div class="mb-5">
               <p class="lead fw-normal mb-1">About</p>
               <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1">{{currentUser.bio}}</p>
-                <p class="font-italic mb-0">{{currentUser.email}} </p>
+                <p class="font-italic mb-1">{{user.bio}}</p>
+                <p class="font-italic mb-0">{{user.email}} </p>
 
               </div>
             </div>
@@ -57,7 +52,7 @@
             </div>
             <div class="row g-2">
 
-                {{#each userRecipes}}
+                {{#each user.recipes}}
                   <div class="col mb-2">
                       <a href="/recipes/{{this._id}}">
                       <img

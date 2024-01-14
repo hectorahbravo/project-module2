@@ -44,10 +44,12 @@ router.get(
   authMiddleware.isAuthenticated,
   userController.edit
 );
-router.post(
-  "/profile/edit",
+
+//Profile
+router.get(
+  "/profile/:id",
   authMiddleware.isAuthenticated,
-  userController.doEdit
+  userController.viewOtherProfile
 );
 
 router.get("/activate/:token", authController.activate);
@@ -85,10 +87,21 @@ router.post(
   upload.single("image"),
   commentsController.doCreate
 );
+router.post(
+  "/commentsapi/:id/create",
+  authMiddleware.isAuthenticated,
+  upload.single("image"),
+  commentsController.doCreate
+);
 
 //like
 router.post(
   "/like/:id",
+  authMiddleware.isAuthenticated,
+  likeController.newLike
+);
+router.post(
+  "/likeapi/:id",
   authMiddleware.isAuthenticated,
   likeController.newLike
 );

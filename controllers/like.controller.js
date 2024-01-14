@@ -5,23 +5,45 @@ const Recipe = require("../models/Recipe.model");
 module.exports.newLike = (req, res, next) => {
   const { id } = req.params;
 
-  Like.findOne({ recipe: id, user: req.session.currentUser._id })
+  const isLikeApi = req.path.includes("likeapi");
+
+  const likeData = {
+    user: req.session.currentUser._id,
+    [isLikeApi ? "recipeApi" : "recipe"]: id,
+  };
+
+  const searchQuery = {
+    [isLikeApi ? "recipeApi" : "recipe"]: id,
+    user: req.session.currentUser._id,
+  };
+
+  // Buscar si ya existe un like para la receta y usuario actual
+  Like.findOne(searchQuery)
     .then((existingLike) => {
       if (existingLike) {
+        // Si ya existe un like, eliminarlo
         return Like.findOneAndDelete(existingLike._id).then(() => {
           console.log("Like eliminado:", existingLike._id);
+          req.session.likeAction = {
+            action: "delete",
+            likeId: existingLike._id,
+          };
         });
       } else {
-        return Like.create({
-          recipe: id,
-          user: req.session.currentUser._id,
-        }).then((newLike) => {
+        // Si no existe un like, crearlo
+        return Like.create(likeData).then((newLike) => {
           console.log("Nuevo like creado:", newLike);
+          req.session.likeAction = { action: "create", likeId: newLike._id };
         });
       }
     })
     .then(() => {
-      res.redirect(`/recipes/${id}`);
+      // Redireccionar después de manejar el like
+      if (isLikeApi) {
+        res.redirect(`/recipesapi/${id}`);
+      } else {
+        res.redirect(`/recipes/${id}`);
+      }
     })
     .catch((error) => {
       next(error);

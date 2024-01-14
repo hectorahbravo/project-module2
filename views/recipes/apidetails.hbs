@@ -19,18 +19,18 @@
           </div>
         </div>
       </div>
-      <!--<div class="d-flex justify-content-center align-items-center mt-3"> 
-          <form action="/like/{{idMeal}}" method="POST">
-          <button type="submit" class="btn  {{#userLikedRecipeApi recipeId=idMeal userId=currentUser._id}} btn-danger {{else}} btn-primary bg-light-green{{/userLikedRecipeApi}} mt-3 mx-2"><i class="fa-regular fa-heart"></i></button>
+      <div class="d-flex justify-content-center align-items-center mt-3"> 
+          <form action="/likeapi/{{idMeal}}" method="POST">
+          <button type="submit" class="btn  {{#userLikedRecipeApi likeUserId=like.user userId=currentUser._id}} btn-danger {{else}} btn-primary bg-light-green{{/userLikedRecipeApi}} mt-3 mx-2"><i class="fa-regular fa-heart"></i></button>
           </form>
-        </div>-->
+        </div>
 
       <section class="section">
         <div class="container">
 
           <div class="row blog-entries element-animate">
 
-            <div class="col-md-12 col-lg-8 main-content">
+            <div class="col-md-12 col-lg-12 main-content">
 
               <div class="post-content-body">
                 <ul>
@@ -43,14 +43,14 @@
               <p>{{strArea}}</p>
 
             </div>
-            <!--
+            
     <div class="col-12">
     <h2>Comments</h2>
-    {{#each recipe.comments as |comment|}}
+    {{#each comments as |comment|}}
     <div class="card my-1">
       <div class="card-body">
         <p class="card-text">{{comment.content}}</p>
-        {{#userMatchRecipeUser recipeUserId=comment.user._id userId=../currentUser._id }} 
+        {{#userMatchRecipeUser recipeUserId=comment.user._id userId=../currentUser._id }}
         <a href="/comments/{{comment._id}}/delete" style="float: right; text-decoration: none;">🗑️<i data-feather="trash-2" width="16" style="color: red;"></i></a>
         {{/userMatchRecipeUser}}
       </div>
@@ -59,11 +59,10 @@
       </div>
     </div>
     {{/each}}
-    </div>
    
 
 
-     <form action="/comments/{{recipe._id}}/create" method="POST">
+     <form action="/commentsapi/{{idMeal}}/create" method="POST">
         <div class="comment-form-wrap pt-5 ">
           <h3 class="mb-5">Leave a comment</h3>
 
@@ -73,7 +72,6 @@
                 </div>
                   <button type="submit" class="btn btn-primary"><i class="fa-regular fa-comment"></i></button>   
     </form>
--->
 
           </div>
         </div>

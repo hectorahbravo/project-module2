@@ -26,8 +26,8 @@ hbs.registerHelper("userMatchRecipeUser", function (options) {
 });
 
 hbs.registerHelper("userLikedRecipeApi", function (options) {
-  const { userId, recipeId } = options.hash;
-  if (userId && recipeId && userId === recipeId) {
+  const { userId, likeUserId } = options.hash;
+  if (userId && likeUserId && userId.toString() === likeUserId.toString()) {
     return options.fn(this);
   } else {
     return options.inverse(this);

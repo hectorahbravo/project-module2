@@ -44,6 +44,11 @@ router.get(
   authMiddleware.isAuthenticated,
   userController.edit
 );
+router.post(
+  "/profile/edit",
+  authMiddleware.isAuthenticated,
+  userController.doEdit
+);
 
 //Profile
 router.get(

@@ -8,7 +8,7 @@
           <div class="post-entry text-center">
             <h1 class="mb-4">{{recipe.title}}</h1>
             <div class="post-meta align-items-center text-center">
-              {{#if recipe.user}}<figure class="author-figure mb-0 me-3 d-inline-block"><img src={{recipe.user.picture}} alt="Image" class="img-fluid"></figure>{{/if}}
+              {{#if recipe.user}}<a href="/profile/{{recipe.user._id}}"><figure class="author-figure mb-0 me-3 d-inline-block"><img src={{recipe.user.picture}} alt="Image" class="img-fluid"></figure></a>{{/if}}
               <span class="d-inline-block mt-1">{{#if recipe.user}}By {{recipe.user.username}}{{/if}}</span>
               <span>{{recipe.mealType}}</span>
               <span>&nbsp;-&nbsp; {{recipe.date}}</span>
@@ -18,7 +18,7 @@
       </div>
     </div>
   </div>
-       <div class="d-flex justify-content-center align-items-center mt-3"> 
+       <div class="d-flex justify-content-center align-items-center mt-1"> 
         {{#userMatchRecipeUser recipeUserId=recipe.user._id userId=currentUser._id }} 
         <a class="btn btn-primary" href="/recipes/{{recipe._id}}/edit"><i class="fa-regular fa-pen-to-square"></i></a>
          {{/userMatchRecipeUser}}
@@ -36,22 +36,24 @@
 
       <div class="row blog-entries element-animate">
 
-        <div class="col-md-12 col-lg-8 main-content">
+        <div class="col-md-12 col-lg-12 main-content">
 
           <div class="post-content-body">
+            <h3 class="mb-1">Ingredients</h3>
             <ul>
             {{#each recipe.ingredients}}
               <li>{{this}}</li>
             {{/each}}
             </ul>
-
+            <h3 class="mb-1">Preparation</h3>
             <p>{{recipe.preparation}}</p>
+            <h3 class="mb-1">Preparation time</h3>
             <p>{{recipe.preparationtime}}</p>
           </div>
 
   </div>
   <div class="col-12">
-    <h2>Comments</h2>
+    <h2 class="mb-2">Comments</h2>
     {{#each recipe.comments as |comment|}}
     <div class="card my-1">
       <div class="card-body">
@@ -71,7 +73,7 @@
 
      <form action="/comments/{{recipe._id}}/create" method="POST">
         <div class="comment-form-wrap pt-5 ">
-          <h3 class="mb-5">Leave a comment</h3>
+          <h3 class="mb-2">Leave a comment</h3>
 
                 <div class="form-group">
                   <label for="message">Message</label>

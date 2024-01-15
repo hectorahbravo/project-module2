@@ -1,212 +1,223 @@
+<section class="section bg-light">
+  <div class="container">
+    <div class="row align-items-stretch retro-layout">
+      <h2 class="posts-entry-title mb-4">Recipe from themealdb.com</h2>
+      <div class="col-md-4">
+        <a
+          href="/recipesapi/{{recipeOne.idMeal}}"
+          class="h-entry mb-30 v-height gradient"
+        >
 
-  <body>
-    <!-- Start retroy layout blog posts -->
-    <section class="section bg-light">
-      <div class="container">
-        <div class="row align-items-stretch retro-layout">
-          <div class="col-md-4">
-            <a href="/recipesapi/{{recipeOne.idMeal}}" class="h-entry mb-30 v-height gradient">
+          <div
+            class="featured-img"
+            style="background-image: url({{recipeOne.strMealThumb}});"
+          ></div>
 
-              <div
-                class="featured-img"
-                style="background-image: url({{recipeOne.strMealThumb}});"
-              ></div>
-
-              <div class="text">
-                <span class="date">{{recipeOne.strArea}}</span>
-                <h2>{{recipeOne.strMeal}}</h2>
-              </div>
-            </a>
-            <a href="/recipesapi/{{recipeTwo.idMeal}}" class="h-entry v-height gradient">
-
-              <div
-                class="featured-img"
-                style="background-image: url({{recipeTwo.strMealThumb}});"
-              ></div>
-
-              <div class="text">
-                <span class="date">{{recipeTwo.strArea}}</span>
-                <h2>{{recipeTwo.strMeal}}</h2>
-              </div>
-            </a>
+          <div class="text">
+            <span class="date">{{recipeOne.strArea}}</span>
+            <h2>{{recipeOne.strMeal}}</h2>
           </div>
-          <div class="col-md-4">
-            <a href="/recipesapi/{{recipeThree.idMeal}}" class="h-entry img-5 h-100 gradient">
+        </a>
+        <a
+          href="/recipesapi/{{recipeTwo.idMeal}}"
+          class="h-entry v-height gradient"
+        >
 
-              <div
-                class="featured-img"
-                style="background-image: url({{recipeThree.strMealThumb}});"
-              ></div>
+          <div
+            class="featured-img"
+            style="background-image: url({{recipeTwo.strMealThumb}});"
+          ></div>
 
-              <div class="text">
-                <span class="date">{{recipeThree.strArea}}</span>
-                <h2>{{recipeThree.strMeal}}</h2>
-              </div>
-            </a>
+          <div class="text">
+            <span class="date">{{recipeTwo.strArea}}</span>
+            <h2>{{recipeTwo.strMeal}}</h2>
           </div>
-          <div class="col-md-4">
-            <a href="/recipesapi/{{recipeFour.idMeal}}" class="h-entry mb-30 v-height gradient">
-
-              <div
-                class="featured-img"
-                style="background-image: url({{recipeFour.strMealThumb}});"
-              ></div>
-
-              <div class="text">
-                <span class="date">{{recipeFour.strArea}}</span>
-                <h2>{{recipeFour.strMeal}}</h2>
-              </div>
-            </a>
-            <a href="/recipesapi/{{recipeFive.idMeal}}" class="h-entry v-height gradient">
-
-              <div
-                class="featured-img"
-                style="background-image: url('{{recipeFive.strMealThumb}}');"
-              ></div>
-
-              <div class="text">
-                <span class="date">{{recipeFive.strArea}}</span>
-                <h2>{{recipeFive.strMeal}}</h2>
-              </div>
-            </a>
-          </div>
-        </div>
+        </a>
       </div>
-    </section>
-    <!-- End retroy layout blog posts -->
+      <div class="col-md-4">
+        <a
+          href="/recipesapi/{{recipeThree.idMeal}}"
+          class="h-entry img-5 h-100 gradient"
+        >
 
-    <!-- Start posts-entry -->
-    <section class="section posts-entry">
-      <div class="container">
-        <div class="row mb-4">
-          <div class="col-sm-6">
-            <h2 class="posts-entry-title">Recipe from our gustopolers</h2>
+          <div
+            class="featured-img"
+            style="background-image: url({{recipeThree.strMealThumb}});"
+          ></div>
+
+          <div class="text">
+            <span class="date">{{recipeThree.strArea}}</span>
+            <h2>{{recipeThree.strMeal}}</h2>
           </div>
-          <div class="col-sm-6 text-sm-end"><a
-              href="/recipes"
-              class="read-more"
-            >View All</a></div>
-        </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a
+          href="/recipesapi/{{recipeFour.idMeal}}"
+          class="h-entry mb-30 v-height gradient"
+        >
+
+          <div
+            class="featured-img"
+            style="background-image: url({{recipeFour.strMealThumb}});"
+          ></div>
+
+          <div class="text">
+            <span class="date">{{recipeFour.strArea}}</span>
+            <h2>{{recipeFour.strMeal}}</h2>
+          </div>
+        </a>
+        <a
+          href="/recipesapi/{{recipeFive.idMeal}}"
+          class="h-entry v-height gradient"
+        >
+
+          <div
+            class="featured-img"
+            style="background-image: url('{{recipeFive.strMealThumb}}');"
+          ></div>
+
+          <div class="text">
+            <span class="date">{{recipeFive.strArea}}</span>
+            <h2>{{recipeFive.strMeal}}</h2>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section posts-entry">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-sm-6">
+        <h2 class="posts-entry-title">Recipe from our gustopolers</h2>
+      </div>
+      <div class="col-sm-6 text-sm-end"><a
+          href="/recipes"
+          class="read-more"
+        >View All</a></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-9">
         <div class="row g-3">
-          <div class="col-md-9">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="blog-entry">
-                  <a href="/recipes/{{ourRecipeOne._id}}" class="img-link">
-                    <img 
-                      src="{{ourRecipeOne.image}}"
-                      alt="Image"
-                      class="img-fluid"
-                    />
-                  </a>
-                  <span class="date">Apr. 14th, 2022</span>
-                  <h2><a href="/recipes/{{ourRecipeOne._id}}">{{ourRecipeOne.title}}</a></h2>
-                  <p>{{ourRecipeOne.description}}.</p>
-                  <p><a
-                      href="/recipes/{{ourRecipeOne._id}}"
-                      class="btn btn-sm btn-outline-primary"
-                    >Read More</a></p>
-                </div>
-                                <div class="blog-entry">
-                  <a href="/recipes/{{ourRecipeTwo._id}}" class="img-link">
-                    <img
-                      src="{{ourRecipeTwo.image}}"
-                      alt="Image"
-                      class="img-fluid"
-                    />
-                  </a>
-                  <span class="date">Apr. 14th, 2022</span>
-                  <h2><a href="/recipes/{{ourRecipeTwo._id}}">{{ourRecipeTwo.title}}</a></h2>
-                  <p>{{ourRecipeTwo.description}}.</p>
-                  <p><a
-                      href="/recipes/{{ourRecipeTwo._id}}"
-                      class="btn btn-sm btn-outline-primary"
-                    >Read More</a></p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="blog-entry">
-                  <a href="/recipes/{{ourRecipeThree._id}}" class="img-link">
-                    <img
-                      src="{{ourRecipeThree.image}}"
-                      alt="Image"
-                      class="img-fluid"
-                    />
-                  </a>
-                  <span class="date">Apr. 14th, 2022</span>
-                  <h2><a href="/recipes/{{ourRecipeThree._id}}">{{ourRecipeThree.title}}</a></h2>
-                  <p>{{ourRecipeThree.description}}.</p>
-                  <p><a
-                      href="/recipes/{{ourRecipeThree._id}}"
-                      class="btn btn-sm btn-outline-primary"
-                    >Read More</a></p>
-                </div>
-
-                
-                  <a href="/recipes/{{ourRecipeFour._id}}" class="img-link">
-                    <img
-                      src="{{ourRecipeFour.image}}"
-                      alt="Image"
-                      class="img-fluid"
-                    />
-                  </a>
-                  <span class="date">Apr. 14th, 2022</span>
-                  <h2><a href="/recipes/{{ourRecipeFour._id}}">{{ourRecipeFour.title}}</a></h2>
-                  <p>{{ourRecipeFour.description}}.</p>
-                  <p><a
-                      href="/recipes/{{ourRecipeFour._id}}"
-                      class="btn btn-sm btn-outline-primary"
-                    >Read More</a></p>
-
-              </div>
+          <div class="col-md-6">
+            <div class="blog-entry">
+              <a href="/recipes/{{ourRecipeOne._id}}" class="img-link">
+                <img
+                  src="{{ourRecipeOne.image}}"
+                  alt="Image"
+                  class="img-fluid"
+                />
+              </a>
+              <span class="date">{{ourRecipeOne.mealType}}</span>
+              <h2><a
+                  href="/recipes/{{ourRecipeOne._id}}"
+                >{{ourRecipeOne.title}}</a></h2>
+              <p>{{ourRecipeOne.description}}.</p>
+              <p><a
+                  href="/recipes/{{ourRecipeOne._id}}"
+                  class="btn btn-sm btn-outline-primary"
+                >Read More</a></p>
+            </div>
+            <div class="blog-entry">
+              <a href="/recipes/{{ourRecipeTwo._id}}" class="img-link">
+                <img
+                  src="{{ourRecipeTwo.image}}"
+                  alt="Image"
+                  class="img-fluid"
+                />
+              </a>
+              <span class="date">{{ourRecipeTwo.mealType}}</span>
+              <h2><a
+                  href="/recipes/{{ourRecipeTwo._id}}"
+                >{{ourRecipeTwo.title}}</a></h2>
+              <p>{{ourRecipeTwo.description}}.</p>
+              <p><a
+                  href="/recipes/{{ourRecipeTwo._id}}"
+                  class="btn btn-sm btn-outline-primary"
+                >Read More</a></p>
             </div>
           </div>
-           <div class="col-md-3">
-            <ul class="list-unstyled blog-entry-sm">
-              <li>
-                <span class="date"></span>
-                <h3><a href="/profile/{{ourUserOne._id}}">🥇{{ourUserOne.username}}</a></h3>
-                <p>{{ourUserThree.bio}}</p>
-                <p>{{ourUserThree.recipes.length}}</p>
-                <p><a href="/profile/{{ourUserOne.username._id}}" class="read-more">View Profile</a></p>
-              </li>
+          <div class="col-md-6">
+            <div class="blog-entry">
+              <a href="/recipes/{{ourRecipeThree._id}}" class="img-link">
+                <img
+                  src="{{ourRecipeThree.image}}"
+                  alt="Image"
+                  class="img-fluid"
+                />
+              </a>
+              <span class="date">{{ourRecipeThree.mealType}}</span>
+              <h2><a
+                  href="/recipes/{{ourRecipeThree._id}}"
+                >{{ourRecipeThree.title}}</a></h2>
+              <p>{{ourRecipeThree.description}}.</p>
+              <p><a
+                  href="/recipes/{{ourRecipeThree._id}}"
+                  class="btn btn-sm btn-outline-primary"
+                >Read More</a></p>
+            </div>
 
-              <li>
-                <span class="date"></span>
-                <h3><a href="/profile/{{ourUserTwo._id}}">🥈{{ourUserTwo.username}}</a></h3>
-                <p>{{ourUserThree.bio}}</p>
-                <p>{{ourUserThree.recipes.length}}</p>
-                <p><a href="/profile/{{ourUserTwo._id}}" class="read-more">View Profile</a></p>
-              </li>
+            <a href="/recipes/{{ourRecipeFour._id}}" class="img-link">
+              <img
+                src="{{ourRecipeFour.image}}"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+            <span class="date">{{ourRecipeFour.mealType}}</span>
+            <h2><a
+                href="/recipes/{{ourRecipeFour._id}}"
+              >{{ourRecipeFour.title}}</a></h2>
+            <p>{{ourRecipeFour.description}}.</p>
+            <p><a
+                href="/recipes/{{ourRecipeFour._id}}"
+                class="btn btn-sm btn-outline-primary"
+              >Read More</a></p>
 
-              <li>
-                <span class="date"></span>
-                <h3><a href="/profile/{{ourUserThree._id}}">🥉{{ourUserThree.username}}</a></h3>
-                <p>{{ourUserThree.bio}}</p>
-                <p>{{ourUserThree.recipes.length}}</p>
-                <p><a href="/profile/{{ourUserThree._id}}" class="read-more">View Profile</a></p>
-              </li>
-            </ul>
           </div>
         </div>
-                
       </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled blog-entry-sm">
+          <li>
+            <span class="date"></span>
+            <h3><a
+                href="/profile/{{ourUserOne._id}}"
+              >🥇{{ourUserOne.username}}</a></h3>
+            <p>{{ourUserOne.bio}}</p>
+            <p>{{ourUserOne.recipes.length}} recipes</p>
+            <p><a
+                href="/profile/{{ourUserOne.username._id}}"
+                class="read-more"
+              >View Profile</a></p>
+          </li>
 
+          <li>
+            <span class="date"></span>
+            <h3><a
+                href="/profile/{{ourUserTwo._id}}"
+              >🥈{{ourUserTwo.username}}</a></h3>
+            <p>{{ourUserTwo.bio}}</p>
+            <p>{{ourUserTwo.recipes.length}} recipes</p>
+            <p><a href="/profile/{{ourUserTwo._id}}" class="read-more">View
+                Profile</a></p>
+          </li>
 
-         
-
-    </div>
-    </section>
-    <!-- End posts-entry -->
-
-    <!-- /.site-footer -->
-
-    <!-- Preloader -->
-    <div id="overlayer"></div>
-    <div class="loader">
-      <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
+          <li>
+            <span class="date"></span>
+            <h3><a
+                href="/profile/{{ourUserThree._id}}"
+              >🥉{{ourUserThree.username}}</a></h3>
+            <p>{{ourUserThree.bio}}</p>
+            <p>{{ourUserThree.recipes.length}} recipes</p>
+            <p><a href="/profile/{{ourUserThree._id}}" class="read-more">View
+                Profile</a></p>
+          </li>
+        </ul>
       </div>
     </div>
-  </body>
-</html>
+
+  </div>
+</section>

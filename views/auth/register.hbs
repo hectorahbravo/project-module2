@@ -32,6 +32,12 @@
       {{#if errors.password}}<div class="invalid-feedback">{{ errors.password }}</div>{{/if}}
     </div>
 
+        <div class="input-group mb-3">
+      <label class="w-100 mb-2" for="image" style="color: #3498db;">Image</label>
+        <input placeholder="Upload an image" type="file" name="picture" class="{{#if errors}}is-invalid{{/if}} form-control" id="image">
+      {{#if errors.image}}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
+    </div>
+
     <div class="d-grid gap-2">
 <button type="submit" class="btn btn-primary">Register</button>
       <a class="btn text-bg-light" href="/auth/google">Sign in with <img src="/images/google-icon.png" class="mb-1" width="25"></img>Google</a>    </div>

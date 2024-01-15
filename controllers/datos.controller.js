@@ -8,8 +8,6 @@ exports.categories = (req, res, next) => {
       return response.json();
     })
     .then((data) => {
-      console.log("Parsed response: ", data);
-
       res.render("recipes/categories", { categories: data.categories });
     })
     .catch((err) => console.log(err));
@@ -22,7 +20,6 @@ exports.category = (req, res, next) => {
       return response.json();
     })
     .then((data) => {
-      console.log("Parsed response: ", data);
       res.render("recipes/category", { recipes: data.meals });
     })
     .catch((err) => console.log(err));

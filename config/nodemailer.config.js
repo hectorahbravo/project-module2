@@ -236,7 +236,7 @@ module.exports.createEmailTemplate = (user) => {
     <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
   <div align="center">
     <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://unlayer.com" style="height:37px; v-text-anchor:middle; width:290px;" arcsize="11%"  stroke="f" fillcolor="#469720"><w:anchorlock/><center style="color:#FFFFFF;"><![endif]-->
-<a href="http://${process.env.HOST}/activate/${user.activationToken}" style="background-color: green;color: whitesmoke;padding: 8px 12px;border-radius: 4px;text-decoration: none;">
+<a href="${process.env.HOST}/activate/${user.activationToken}" style="background-color: green;color: whitesmoke;padding: 8px 12px;border-radius: 4px;text-decoration: none;">
         Activate
       </a>      <!--[if mso]></center></v:roundrect><![endif]-->
   </div>

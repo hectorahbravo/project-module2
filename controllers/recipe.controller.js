@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 module.exports.list = (req, res, next) => {
   Recipe.find()
+    .sort({ _id: -1 })
     .then((recipes) => {
       res.render("recipes/list", { recipes });
     })

@@ -4,14 +4,14 @@ const logger = require("morgan");
 const passport = require("passport");
 const session = require("express-session");
 require("dotenv").config();
-require("./config/db.config"); // es como si pusieramos todas las lineas del db.confgi aquí, pero somos mejores que eso.
+require("./config/db.config");
 require("./config/passport.config");
 require("./config/hbs.config");
 const app = express();
 
 app.use(
   session({
-    secret: "tu_secreto_super_seguro", // Cambia esto a una cadena de caracteres segura
+    secret: "tu_secreto_super_seguro",
     resave: false,
     saveUninitialized: true,
   })
@@ -37,7 +37,6 @@ app.use((req, res, next) => {
 const router = require("./router/router");
 app.use("/", router);
 
-// Middleware to handle errors.
 app.use((err, req, res, next) => {
   console.error(err);
 

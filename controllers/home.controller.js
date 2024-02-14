@@ -40,6 +40,10 @@ module.exports.goHome = (req, res, next) => {
         ourRecipeTwo: recipes[indexTwo],
         ourRecipeThree: recipes[indexThree],
         ourRecipeFour: recipes[indexFour],
+        ourUserOne: users[0],
+        ourUserTwo: users[1],
+        ourUserThree: users[2],
+        recipesUserOne: users[0].recipes.length,
       });
     })
     .catch((err) => console.log(err));

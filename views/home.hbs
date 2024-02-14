@@ -180,46 +180,48 @@
         </div>
       </div>
       <div class="col-md-3">
-        <ul class="list-unstyled blog-entry-sm m-4">
-          <li>
-            <span class="date"></span>
-            <h3><a
-                href="/profile/{{ourUserOne._id}}"
-              >🥇{{ourUserOne.username}}</a></h3>
-            <p>{{ourUserOne.bio}}</p>
-            <p>{{ourUserOne.recipes.length}} recipes</p>
-            <p><a
-                href="/profile/{{ourUserOne._id}}"
-                class="btn btn-primary"
-              >View Profile</a></p>
-          </li>
+        {{#if userOne}}
+          <ul class="list-unstyled blog-entry-sm m-4">
+            <li>
+              <span class="date"></span>
+              <h3><a
+                  href="/profile/{{ourUserOne._id}}"
+                >🥇{{ourUserOne.username}}</a></h3>
+              <p>{{ourUserOne.bio}}</p>
+              <p>{{ourUserOne.recipes.length}} recipes</p>
+              <p><a
+                  href="/profile/{{ourUserOne._id}}"
+                  class="btn btn-primary"
+                >View Profile</a></p>
+            </li>
 
-          <li>
-            <span class="date"></span>
-            <h3><a
-                href="/profile/{{ourUserTwo._id}}"
-              >🥈{{ourUserTwo.username}}</a></h3>
-            <p>{{ourUserTwo.bio}}</p>
-            <p>{{ourUserTwo.recipes.length}} recipes</p>
-            <p><a
-                href="/profile/{{ourUserTwo._id}}"
-                class="btn btn-primary"
-              >View Profile</a></p>
-          </li>
+            <li>
+              <span class="date"></span>
+              <h3><a
+                  href="/profile/{{ourUserTwo._id}}"
+                >🥈{{ourUserTwo.username}}</a></h3>
+              <p>{{ourUserTwo.bio}}</p>
+              <p>{{ourUserTwo.recipes.length}} recipes</p>
+              <p><a
+                  href="/profile/{{ourUserTwo._id}}"
+                  class="btn btn-primary"
+                >View Profile</a></p>
+            </li>
 
-          <li>
-            <span class="date"></span>
-            <h3><a
-                href="/profile/{{ourUserThree._id}}"
-              >🥉{{ourUserThree.username}}</a></h3>
-            <p>{{ourUserThree.bio}}</p>
-            <p>{{ourUserThree.recipes.length}} recipes</p>
-            <p><a
-                href="/profile/{{ourUserThree._id}}"
-                class="btn btn-primary"
-              >View Profile</a></p>
-          </li>
-        </ul>
+            <li>
+              <span class="date"></span>
+              <h3><a
+                  href="/profile/{{ourUserThree._id}}"
+                >🥉{{ourUserThree.username}}</a></h3>
+              <p>{{ourUserThree.bio}}</p>
+              <p>{{ourUserThree.recipes.length}} recipes</p>
+              <p><a
+                  href="/profile/{{ourUserThree._id}}"
+                  class="btn btn-primary"
+                >View Profile</a></p>
+            </li>
+          </ul>
+        {{/if}}
       </div>
     </div>
 

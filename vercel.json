@@ -1,0 +1,4 @@
+{
+  "builds": [{ "src": "./app.js", "use": "@verce1/node" }],
+  "routes": [{ "src": "/( .* )", "dest": "/" }]
+}

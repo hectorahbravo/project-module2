@@ -35,3 +35,6 @@ Gustopolis está construido con las siguientes tecnologías:
 ## Contribución
 
 ¡Todas las contribuciones son bienvenidas! Si tienes ideas para nuevas características, mejoras de rendimiento o correcciones de errores, no dudes en abrir un problema o enviar una solicitud de extracción.
+
+## Desplegado
+https://gustopolis.onrender.com/

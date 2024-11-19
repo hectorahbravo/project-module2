@@ -29,7 +29,6 @@ module.exports.goHome = (req, res, next) => {
       const indexOneUser = Math.floor(Math.random() * users.length);
       const indexTwoUser = Math.ceil(Math.random() * users.length);
       const indexThreeUser = Math.floor(Math.random() * users.length);
-      console.log(users);
       res.render("home", {
         recipeOne: recipe1.meals[0],
         recipeTwo: recipe2.meals[0],

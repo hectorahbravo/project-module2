@@ -23,7 +23,6 @@ module.exports.newLike = (req, res, next) => {
       if (existingLike) {
         // Si ya existe un like, eliminarlo
         return Like.findOneAndDelete(existingLike._id).then(() => {
-          console.log("Like eliminado:", existingLike._id);
           req.session.likeAction = {
             action: "delete",
             likeId: existingLike._id,
@@ -32,7 +31,6 @@ module.exports.newLike = (req, res, next) => {
       } else {
         // Si no existe un like, crearlo
         return Like.create(likeData).then((newLike) => {
-          console.log("Nuevo like creado:", newLike);
           req.session.likeAction = { action: "create", likeId: newLike._id };
         });
       }

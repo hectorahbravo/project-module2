@@ -11,8 +11,6 @@ module.exports.doCreate = (req, res, next) => {
 
   Comment.create(commentToCreate)
     .then((comment) => {
-      console.log("comment created ", comment);
-
       // Modificar la redirección en función de si es una API de recetas o una receta regular
       const redirectPath = isCommentApi
         ? `/recipesapi/${req.params.id}`

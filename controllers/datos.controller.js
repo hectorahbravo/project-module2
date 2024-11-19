@@ -46,7 +46,6 @@ exports.recipes = (req, res, next) => {
         }
       }
 
-      console.log("data.meals: ", data.meals[0], ingredientsArray);
       const commentPromise = Comment.find({
         recipeApi: data.meals[0].idMeal,
       }).populate("user");
@@ -61,12 +60,10 @@ exports.recipes = (req, res, next) => {
 
           if (comments) {
             renderData.comments = comments;
-            console.log(comments);
           }
 
           if (likeEncontrado) {
             renderData.like = likeEncontrado;
-            console.log(likeEncontrado);
           }
 
           res.render("recipes/apidetails", renderData);
